@@ -10,12 +10,43 @@ import { useRouter } from "next/navigation";
 import useContactModal from "@/hooks/useContactModal";
 import { IoClose } from "react-icons/io5";
 import { motion } from "framer-motion";
+import { useForm, SubmitHandler } from 'react-hook-form';
+
+type FormValues = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 const ContactModal: React.FC = () => {
   const router = useRouter();
   const contactModal = useContactModal();
 
   const [showModal, setShowModal] = useState(contactModal.isOpen);
+
+  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
+
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    try {
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const result = await response.json();
+      console.log(result.message);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
+  };
 
   useEffect(() => {
     setShowModal(contactModal.isOpen);
@@ -29,13 +60,9 @@ const ContactModal: React.FC = () => {
     backgroundColor: "#00000070",
   };
 
-  const handleSubmit = () => {
-    console.log("Form Submitted");
-  };
-
   return (
     <div
-      className={` flex flex-col w-[35rem] h-[28rem] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-6 pt-3 shadow-lg ${
+      className={` border-2 flex flex-col w-[35rem] h-[29rem] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-6 pt-3 shadow-lg rounded-sm ${
         showModal ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -46,31 +73,35 @@ const ContactModal: React.FC = () => {
       >
         <IoClose className="mr-auto ml-auto" />
       </motion.div>
-      <div className=" border-b-2 border-black text-[1.7rem]">Contact Me</div>
-      <form className="w-full h-full" onSubmit={handleSubmit}>
-        <div className="flex justify-between mt-5">
+      <div className=" border-b-2 border-primary text-[1.7rem]">Contact Me</div>
+      <form className="w-full h-full" onSubmit={handleSubmit(onSubmit)}>
+        <div className="flex justify-between mt-4">
           <div className="grid w-[48%] max-w-sm items-center gap-1.5">
             <Label htmlFor="text">Name</Label>
-            <Input type="text" id="name" />
+            <Input type="text" id="name" className="bg-primary text-secondary" {...register('name', { required: true })} />
+            {errors.name && <span>This field is required</span>}
           </div>
           <div className="grid w-[48%] max-w-sm items-center gap-1.5">
             <Label htmlFor="email">Email</Label>
-            <Input type="email" id="email" />
+            <Input type="email" id="email" className="bg-primary text-secondary" {...register('email', { required: true })} />
+            {errors.email && <span>This field is required</span>}
           </div>
         </div>
         <div className="mt-3">
-          <div className="grid w-full max-w-sm items-center gap-1.5">
+          <div className="grid w-[48%] max-w-sm items-center gap-1.5">
             <Label htmlFor="text">Subject</Label>
-            <Input type="text" id="subject" />
+            <Input type="text" id="subject" className="bg-primary text-secondary" {...register('subject', { required: true })} />
+            {errors.subject && <span>This field is required</span>}
           </div>
         </div>
         <div className="grid w-full gap-1.5 mt-3 ">
           <Label htmlFor="message">Message</Label>
-          <Textarea placeholder="Type your message here." id="message" rows={6} />
+          <Textarea placeholder="Type your message here." id="message" rows={6} className="bg-primary text-secondary" {...register('message', { required: true })} />
+          {errors.message && <span>This field is required</span>}
         </div>
         <button
           type="submit"
-          className="bg-black text-white h-[2.5rem] mt-4 rounded-md hover:bg-gray-800 w-full"
+          className="bg-primary text-background h-[2.5rem] mt-6 rounded-md hover:bg-gray-800 w-full"
         >
           Submit
         </button>
