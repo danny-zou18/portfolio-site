@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+
+import {NextUIProvider} from "@nextui-org/react";
+
 import Navbar from "./_components/Navbar";
 import ContactModal from "./_components/ContactModal";
 
@@ -19,9 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`} >
-        <Navbar />
-        <ContactModal />
-        {children}
+        <NextUIProvider className="dark">
+          <Navbar />
+          <ContactModal />
+          {children}
+        </NextUIProvider>
       </body>
     </html>
   );
