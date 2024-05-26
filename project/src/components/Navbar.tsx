@@ -4,8 +4,10 @@ import React, { useCallback } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+
 import useContactModal from "@/hooks/useContactModal";
 import ContactModal from "./ContactModal";
+import ToggleDarkLightMode from "./ToggleDarkLightMode";
 
 interface NavBtnProp {
   href: string;
@@ -53,6 +55,7 @@ const Navbar: React.FC = () => {
         <NavBtn href="/about" whereto="About" />
       </div>
       <div className="">
+        <ToggleDarkLightMode />
         <button
           className="p-2 rounded-lg bg-primary text-secondary "
           onClick={openContact}
