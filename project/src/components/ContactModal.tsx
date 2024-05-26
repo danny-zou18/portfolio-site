@@ -62,7 +62,7 @@ const ContactModal: React.FC = () => {
 
   return (
     <div
-      className={` border-2 flex flex-col w-[35rem] h-[29rem] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-6 pt-3 shadow-lg rounded-sm ${
+      className={` border-2 flex flex-col w-[35rem] h-[32rem] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-10 pt-5 shadow-lg rounded-sm ${
         showModal ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -75,7 +75,7 @@ const ContactModal: React.FC = () => {
       </motion.div>
       <div className=" border-b-2 border-primary text-[1.7rem]">Contact Me</div>
       <form className="w-full h-full" onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex justify-between mt-4">
+        <div className="flex justify-between mt-5">
           <div className="grid w-[48%] max-w-sm items-center gap-1.5">
             <Label htmlFor="text">Name</Label>
             <Input type="text" id="name" className="bg-primary text-secondary" {...register('name', { required: true })} />
@@ -87,21 +87,21 @@ const ContactModal: React.FC = () => {
             {errors.email && <span>This field is required</span>}
           </div>
         </div>
-        <div className="mt-3">
+        <div className="mt-5">
           <div className="grid w-[48%] max-w-sm items-center gap-1.5">
-            <Label htmlFor="text">Subject</Label>
-            <Input type="text" id="subject" className="bg-primary text-secondary" {...register('subject', { required: true })} />
+            <Label htmlFor="text" className="flex items-center">Subject <span className="text-[.8rem] text-gray-400">(Optional)</span></Label>
+            <Input type="text" id="subject" className="bg-primary text-secondary" {...register('subject', { required: false })} />
             {errors.subject && <span>This field is required</span>}
           </div>
         </div>
-        <div className="grid w-full gap-1.5 mt-3 ">
+        <div className="grid w-full gap-1.5 mt-5 ">
           <Label htmlFor="message">Message</Label>
           <Textarea placeholder="Type your message here." id="message" rows={6} className="bg-primary text-secondary" {...register('message', { required: true })} />
           {errors.message && <span>This field is required</span>}
         </div>
         <button
           type="submit"
-          className="bg-primary text-background h-[2.5rem] mt-6 rounded-md hover:bg-gray-800 w-full"
+          className="bg-primary text-background h-[2.5rem] mt-8 rounded-md hover:bg-gray-800 w-full"
         >
           Submit
         </button>
