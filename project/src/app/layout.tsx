@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import {NextUIProvider} from "@nextui-org/react";
+import { ThemeProvider } from "./components/theme-provider";
 
-import Navbar from "./_components/Navbar";
-import ContactModal from "./_components/ContactModal";
+import Navbar from "./components/Navbar";
+import ContactModal from "./components/ContactModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,11 +22,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`} >
-        <NextUIProvider className="dark">
-          <Navbar />
-          <ContactModal />
-          {children}
-        </NextUIProvider>
+          <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+            <Navbar />
+            <ContactModal />
+            {children}
+          </ThemeProvider>
       </body>
     </html>
   );

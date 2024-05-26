@@ -2,7 +2,10 @@
 
 import React, { useState, useCallback, useEffect } from "react";
 
-import { Input, Textarea } from "@nextui-org/react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+
 import { useRouter } from "next/navigation";
 import useContactModal from "@/hooks/useContactModal";
 import { IoClose } from "react-icons/io5";
@@ -28,11 +31,11 @@ const ContactModal: React.FC = () => {
 
   const handleSubmit = () => {
     console.log("Form Submitted");
-  }
+  };
 
   return (
     <div
-      className={`bg-[#1c1c1c] flex flex-col w-[35rem] h-[28rem] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-6 pt-3 shadow-lg ${
+      className={` flex flex-col w-[35rem] h-[28rem] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-6 pt-3 shadow-lg ${
         showModal ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -46,45 +49,31 @@ const ContactModal: React.FC = () => {
       <div className=" border-b-2 border-black text-[1.7rem]">Contact Me</div>
       <form className="w-full h-full" onSubmit={handleSubmit}>
         <div className="flex justify-between mt-5">
-          <Input
-            id="name"
-            type="text"
-            label="Name"
-            color={"primary"}
-            className="text-black w-[47%] "
-            radius="sm"
-            isRequired
-          />
-          <Input
-            id="email"
-            type="email"
-            label="Email"
-            className="text-black w-[47%]"
-            radius="sm"
-            isRequired
-          />
+          <div className="grid w-[48%] max-w-sm items-center gap-1.5">
+            <Label htmlFor="text">Name</Label>
+            <Input type="text" id="name" />
+          </div>
+          <div className="grid w-[48%] max-w-sm items-center gap-1.5">
+            <Label htmlFor="email">Email</Label>
+            <Input type="email" id="email" />
+          </div>
         </div>
         <div className="mt-3">
-          <Input
-            id="subject"
-            type="text"
-            label="Subject"
-            className="text-black w-[47%]"
-            radius="sm"
-            isRequired
-          />
+          <div className="grid w-full max-w-sm items-center gap-1.5">
+            <Label htmlFor="text">Subject</Label>
+            <Input type="text" id="subject" />
+          </div>
         </div>
-        <Textarea
-          id="message"
-          label="Message"
-          labelPlacement="outside"
-          className="w-full mt-3"
-          minRows={6}
-        />
+        <div className="grid w-full gap-1.5 mt-3 ">
+          <Label htmlFor="message">Message</Label>
+          <Textarea placeholder="Type your message here." id="message" rows={6} />
+        </div>
         <button
           type="submit"
           className="bg-black text-white h-[2.5rem] mt-4 rounded-md hover:bg-gray-800 w-full"
-        >Submit</button>
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
