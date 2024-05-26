@@ -73,7 +73,7 @@ const ContactModal: React.FC = () => {
       >
         <IoClose className="mr-auto ml-auto" />
       </motion.div>
-      <div className=" border-b-2 border-primary text-[1.7rem]">Contact Me</div>
+      <div className=" border-primary text-[1.7rem]">Contact Me</div>
       <form className="w-full h-full" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex justify-between mt-5">
           <div className="grid w-[48%] max-w-sm items-center gap-1.5">
