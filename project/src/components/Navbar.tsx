@@ -47,6 +47,7 @@ const Navbar: React.FC = () => {
   const openContact = useCallback(() => {
     contactModal.onOpen();
   }, [contactModal]);
+  
   return (
     <div className="flex flew-row justify-between items-center h-14 w-[80%] ml-auto mr-auto pt-2">
       <div className="flex flex-row  ">
@@ -57,7 +58,7 @@ const Navbar: React.FC = () => {
       <div className="flex flex-row items-center">
         <ToggleDarkLightMode />
         <button
-          className="p-3 rounded-lg bg-primary text-secondary "
+          className="p-3 rounded-lg bg-primary text-secondary hover: hover:text-primary ml-5 transition-all duration-300"
           onClick={openContact}
         >
           Contact Me
