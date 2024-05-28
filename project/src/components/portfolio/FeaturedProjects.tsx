@@ -98,7 +98,7 @@ const FeaturedProjects: React.FC = () => {
       <div className="grid grid-cols-2 gap-8 w-[70%] h-[33rem] ml-auto mr-auto">
         {featuredProjects.map((project) => (
           <motion.div
-            className={`card p-3 pr-2 bg-white rounded-lg shadow-md cursor-pointer transform transition-transform duration-500 hover:scale-105 ${
+            className={`card p-3 pr-2 bg-primary-foreground rounded-lg shadow-md cursor-pointer transform transition-transform duration-500 hover:scale-105 ${
               selectedId === project.id ? "card-selected" : ""
             }`}
             layoutId={`card-container-${project.id}`}
@@ -114,7 +114,7 @@ const FeaturedProjects: React.FC = () => {
               </motion.h2>
               <motion.div className="flex h-40 ">
                 <motion.div className="border-2 w-[100%] h-40 rounded-lg mr-2"></motion.div>
-                <motion.h5 className="text-sm w-[70%] font-[400] mb-1 text-gray-700">
+                <motion.h5 className="text-sm w-[70%] font-[400] mb-1 text-background">
                   {project.description}
                 </motion.h5>
               </motion.div>
@@ -146,7 +146,7 @@ const FeaturedProjects: React.FC = () => {
               (project) =>
                 project.id === selectedId && (
                   <motion.div
-                    className="bg-white rounded-lg p-4 shadow-md mx-auto w-[60rem] h-[30rem]"
+                    className="bg-primary-foreground rounded-lg p-4 shadow-md mx-auto w-[60rem] h-[30rem]"
                     layoutId={`card-container-${project.id}`}
                     key={project.id}
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -160,7 +160,7 @@ const FeaturedProjects: React.FC = () => {
                       >
                         Close
                       </motion.button>
-                      <motion.h2 className="text-xl font-bold mb-2 text-purple-600">
+                      <motion.h2 className="text-3xl font-[300] mb-2 text-background">
                         {project.title}
                       </motion.h2>
                       <motion.h5 className="text-sm font-bold mb-1 text-gray-700">

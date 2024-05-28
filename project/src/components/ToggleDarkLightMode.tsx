@@ -31,9 +31,9 @@ const ToggleDarkLightMode: React.FC = () => {
       className="mr-5"
     >
       {dark ? (
-        <Sun className="hover:cursor-pointer hover:text-foreground" />
+        <Sun className="text-background hover:cursor-pointer hover:text-foreground" />
       ) : (
-        <Moon className="hover:cursor-pointer hover:text-foreground" />
+        <Moon className="text-background hover:cursor-pointer hover:text-foreground" />
       )}
     </Button>
   );
