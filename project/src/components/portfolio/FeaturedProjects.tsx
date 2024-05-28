@@ -95,10 +95,10 @@ const FeaturedProjects: React.FC = () => {
 
   return (
     <motion.div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-8 w-[70%] h-[30rem] ml-auto mr-auto">
         {featuredProjects.map((project) => (
             <motion.div
-              className={`card bg-white rounded-lg shadow-md cursor-pointer transform transition-transform duration-500 hover:scale-105 ${
+              className={`card p-3 bg-white rounded-lg shadow-md cursor-pointer transform transition-transform duration-500 hover:scale-105 ${
                 selectedId === project.id ? 'card-selected' : ''
               }`}
               layoutId={`card-container-${project.id}`}

@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
       <div className="flex flex-row items-center">
         <ToggleDarkLightMode />
         <button
-          className="p-3 rounded-lg bg-primary text-secondary hover: hover:text-primary ml-5 transition-all duration-300"
+          className="p-3 rounded-lg bg-primary text-secondary hover: hover:text-primary hover:bg-secondary ml-5 transition-all duration-300"
           onClick={openContact}
         >
           Contact Me
