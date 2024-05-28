@@ -14,12 +14,12 @@ import {
 
 type featuredProjectType = {
   id: string;
-  title: String;
+  title: string;
   startDate: Date;
   endDate: Date;
-  description: String;
-  skills: String[];
-  images: String[];
+  description: string;
+  skills: string[];
+  images: string[];
 };
 
 const featuredProjects: featuredProjectType[] = [
@@ -32,8 +32,10 @@ const featuredProjects: featuredProjectType[] = [
       "A music player that allows you to listen to music from your local library.",
     skills: ["Rust", "Leptos", "CSS", "PostgreSQL", "Docker"],
     images: [
-      "https://via.placeholder.com/150",
-      "https://via.placeholder.com/150",
+      "/libretunes/libre4.png",
+      "/libretunes/libre3.png",
+      "/libretunes/libre2.png",
+      "/libretunes/libre1.png",
     ],
   },
   {
@@ -99,10 +101,9 @@ const featuredProjects: featuredProjectType[] = [
 ];
 
 const images = [
-  "https://via.placeholder.com/200",
-  "https://via.placeholder.com/150/0000FF",
-  "https://via.placeholder.com/150/008000",
-  "https://via.placeholder.com/150/FF0000",
+  "/libretunes/libre3.png",
+  "/libretunes/libre2.png",
+  "/libretunes/libre1.png",
 ];
 
 const FeaturedProjects: React.FC = () => {
@@ -128,13 +129,13 @@ const FeaturedProjects: React.FC = () => {
                 {project.title}
               </motion.h2>
               <motion.div className="flex h-48 ">
-                <motion.div className="border-2 w-[100%] rounded-lg mr-2 relative">
-                  {images.map((src, index) => (
+                <motion.div className="border-0 w-[100%] rounded-lg mr-2 relative z-0">
+                  {project.images.map((src, index) => (
                     <img
                       key={index}
                       src={src}
                       alt={`Stacked image ${index}`}
-                      className={`absolute w-60 h-40 rounded-lg transition-transform translate-x-8 translate-y-2 duration-300 ease-in-out ${
+                      className={`absolute w-72 h-44 rounded-lg transition-transform translate-x-2 translate-y-0 duration-300 ease-in-out object-cover ${
                         index !== 0 ? "hover:scale-110" : ""
                       }`}
                       style={{
@@ -151,7 +152,10 @@ const FeaturedProjects: React.FC = () => {
               </motion.div>
               <motion.div className="flex flex-row mt-3 ">
                 {project.skills.slice(0, 3).map((skill, index) => (
-                  <div className="card p-2 pl-3 pr-3 bg-background rounded-[10px] font-[600] shadow-md cursor-pointer text-sm mr-2">
+                  <div
+                    key={index}
+                    className="card p-2 pl-3 pr-3 bg-background rounded-[10px] font-[600] shadow-md cursor-pointer text-sm mr-2"
+                  >
                     <h5>{skill}</h5>
                   </div>
                 ))}
@@ -175,7 +179,7 @@ const FeaturedProjects: React.FC = () => {
               (project) =>
                 project.id === selectedId && (
                   <motion.div
-                    className="bg-primary-foreground rounded-lg p-6 pb-2 shadow-md mx-auto w-[70rem] h-[30rem]"
+                    className="bg-primary-foreground rounded-lg p-6 pb-2 shadow-md mx-auto w-[70rem] h-[30rem] z-10"
                     layoutId={`card-container-${project.id}`}
                     key={project.id}
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -200,7 +204,10 @@ const FeaturedProjects: React.FC = () => {
                       </motion.div>
                       <motion.div className="flex flex-row mt-4 ">
                         {project.skills.map((skill, index) => (
-                          <div className="card p-2 pl-3 pr-3 bg-background rounded-[10px] font-[600] shadow-md cursor-pointer text-[.9rem] mr-2">
+                          <div
+                            key={index}
+                            className="card p-2 pl-3 pr-3 bg-background rounded-[10px] font-[600] shadow-md cursor-pointer text-[.9rem] mr-2"
+                          >
                             <h5>{skill}</h5>
                           </div>
                         ))}
