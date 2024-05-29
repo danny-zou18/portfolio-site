@@ -64,11 +64,11 @@ const featuredProjects: featuredProjectType[] = [
       "Project Repository ^ https://github.com/danny-zou18/LifeScape | Website Repository ^ https://github.com/danny-zou18/LifeScape-Website",
     gitlab: null,
     brief_description:
-      "A mobile application that allows you to leverage a MMO-RPG style environment to gain motivation to do daily tasks to imrpove oneself.",
+      "A mobile application designed to leverage a MMO-RPG style environment to facilitate personal growth and productivity.",
     description:
-      "A mobile application that allows you to leverage a MMO-RPG style environment to gain motivation to do daily tasks to imrpove oneself.",
+      "LifeScape is an innovative mobile application designed to transform your personal growth and productivity journey into an engaging and immersive experience. Inspired by the dynamic elements of MMO-RPGs(Massively Multiplayer Online Role Playing Games), LifeScape provides a unique environment where you can set and achieve your personal goals(either on a daily, weekly, monthly, or custom basis), track your progress, and stay motivated. In LifeScape, your real-life tasks and objectives become exciting quests, hoping to just give you that little extra motivation to do what you need to do. Your achievements unlocks new levels and rewards to mirror your accomplishments in real life.",
     how_built:
-      "LibreTunes is built with Rust, Leptos, CSS, PostgreSQL, RSC APIs, and Docker.",
+      "LifeScape is a fairly new project. I gained inspiration for this idea when I realized that many people obsess over their ingame characters in MMO-RPGs, spending an ungodly amount of time doing quests and whatever to just push their character to the next level, either in terms of stats, actual levels, or equipments. I thought, who not apply this concept in real life and make it engaging? There are already applications that promote this same concept, but I believe that my vision is fairly different and quality is what matters. LifeScape will be initially built with React Native, TypeScript, NativeWind, PostGreSQL, and Docker, but other technologies will definitely be added over time",
     skills: [
       "React Native",
       "TypeScript",
@@ -93,11 +93,11 @@ const featuredProjects: featuredProjectType[] = [
     gitlab:
       "Merge Analyzer ^ https://gitlab.com/conuhacks_devman/mergeanalyzer | CI/CD Cal.com Implementation ^ https://gitlab.com/conuhacks_devman/demo-testing/cal.com",
     brief_description:
-      "Participated in ConUHacks VIII with a team of 4 along 800 other participants. Recipient of CSE's DevSecOps Challenge Award. Built ",
+      "A DevSecOps tool that provides a comprehensive analysis feedback of merge requests. A CI/CD pipeline built for Cal.com as the demo. Built for ConUHacks VIII.",
     description:
-      "Participated in ConUHacks VIII with a team of 4 along 800 other partBadgeicipants. Recipient of CSE's DevSecOps Challenge Award. Built ",
+      "Participated in ConUHacks VIII with a team of 4 along 800 other participants. Recipient of CSE's DevSecOps Challenge Award. Built a DevSecOps tool that provides a comprehensive analysis feedback of merge requests in GitLab and a CI/CD pipeline built for Cal.com as the demo.",
     how_built:
-      "LibreTunes is built with Rust, Leptos, CSS, PostgreSQL, RSC APIs, and Docker.",
+      "We built the Merge Analyzer using Python/Gitlabs Software Development Kit and LLAMA.CPP. In Python, we ran a locally ran llama.cpp instance that is interfaced with Gitlab API to go through all new pull requests to provide feedback. The pipelane was made with gitlab-ci, using Docker and various tools.",
     skills: [
       "Python",
       "Artificial Intelligence",
@@ -152,7 +152,7 @@ const FeaturedProjects: React.FC = () => {
               </motion.div>
 
               <motion.div className="flex h-48 ">
-                <motion.div className="border-0 w-[100%] overflow-hiddenrounded-lg mr-2 relative z-0">
+                <motion.div className="border-0 w-[100%] overflow-hidden rounded-lg mr-2 relative z-0">
                   {project.images.map((src, index) => (
                     <Image
                       key={index}
