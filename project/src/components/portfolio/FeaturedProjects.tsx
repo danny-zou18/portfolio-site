@@ -18,6 +18,7 @@ import { Card, CardContent } from "@/components/ui/card";
 type featuredProjectType = {
   id: string;
   title: string;
+  types: string[];
   startDate: Date;
   endDate: Date;
   brief_description: string;
@@ -30,12 +31,14 @@ const featuredProjects: featuredProjectType[] = [
   {
     id: "1",
     title: "LibreTunes",
+    types: ["Web Application", "Open Source"],
     startDate: new Date("2024-01-10"),
     endDate: new Date("9999-12-30"),
-    brief_description: "A music player that allows you to listen to music from your local library.",
+    brief_description:
+      "A self-hosted music player that allows you listen to music from your local library. Built for collaborative listening experiences.",
     description:
-      "A music player that allows you to listen to music from your local library.",
-    skills: ["Rust", "Leptos", "CSS", "PostgreSQL","RSC APIs", "Docker"],
+      "A self-hosted shared music player that allows you listen to music from your local library. Built for collaborative listening experiences.",
+    skills: ["Rust", "Leptos", "CSS", "PostgreSQL", "RSC APIs", "Docker"],
     images: [
       "/libretunes/libre4.png",
       "/libretunes/libre3.png",
@@ -46,10 +49,13 @@ const featuredProjects: featuredProjectType[] = [
   {
     id: "2",
     title: "LifeScape",
+    types: ["Mobile Application", "Open Source", "Founder"],
     startDate: new Date("2023-05-01"),
     endDate: new Date("9999-12-30"),
-    brief_description: "A mobile application that allows you to leverage a MMO-RPG style environment to gain motivation to do daily tasks to imrpove oneself.",
-    description: "A mobile application that allows you to leverage a MMO-RPG style environment to gain motivation to do daily tasks to imrpove oneself.",
+    brief_description:
+      "A mobile application that allows you to leverage a MMO-RPG style environment to gain motivation to do daily tasks to imrpove oneself.",
+    description:
+      "A mobile application that allows you to leverage a MMO-RPG style environment to gain motivation to do daily tasks to imrpove oneself.",
     skills: [
       "React Native",
       "TypeScript",
@@ -58,16 +64,20 @@ const featuredProjects: featuredProjectType[] = [
       "Docker",
     ],
     images: [
-      "https://via.placeholder.com/150",
-      "https://via.placeholder.com/150",
+      "/libretunes/libre4.png",
+      "/libretunes/libre3.png",
+      "/libretunes/libre2.png",
+      "/libretunes/libre1.png",
     ],
   },
   {
     id: "3",
     title: "DevMan - ConUHacks VIII",
+    types: ["Hackathon", "Winner 🏆", "SaaS"],
     startDate: new Date("2024-01-20"),
     endDate: new Date("2024-01-21"),
-    brief_description: "Participated in ConUHacks VIII with a team of 4 along 800 other participants. Recipient of CSE's DevSecOps Challenge Award. Built ",
+    brief_description:
+      "Participated in ConUHacks VIII with a team of 4 along 800 other participants. Recipient of CSE's DevSecOps Challenge Award. Built ",
     description:
       "Participated in ConUHacks VIII with a team of 4 along 800 other participants. Recipient of CSE's DevSecOps Challenge Award. Built ",
     skills: [
@@ -89,7 +99,6 @@ const featuredProjects: featuredProjectType[] = [
   },
 ];
 
-
 const FeaturedProjects: React.FC = () => {
   const [selectedId, setSelectedId] = useState<string>("");
 
@@ -109,28 +118,40 @@ const FeaturedProjects: React.FC = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="card-content">
-              <motion.h2 className="text-xl font-[300] mb-2 text-background">
-                {project.title}
-              </motion.h2>
+              <motion.div className="flex flex-row justify-between  ">
+                <motion.h2 className="text-xl font-[300] mb-2 text-background">
+                  {project.title}
+                </motion.h2>
+                <motion.div>
+                  {project.types.map((type, index)=> (
+                    <motion.span>
+                      <span className="card p-1  bg-background rounded-[10px] font-[600] shadow-md cursor-pointer text-[.6rem] mr-2">
+                        {type}
+                      </span>                     
+                    </motion.span>
+                  ))}
+                </motion.div>
+              </motion.div>
+
               <motion.div className="flex h-48 ">
-                <motion.div className="border-0 w-[100%] rounded-lg mr-2 relative z-0">
+                <motion.div className="border-0 w-[100%] overflow-hidden bg-red-50 rounded-lg mr-2 relative z-0">
                   {project.images.map((src, index) => (
-                    <img
+                    <Image
                       key={index}
                       src={src}
                       alt={`Stacked image ${index}`}
-                      className={`absolute w-72 h-44 rounded-lg transition-transform translate-x-2 translate-y-0 duration-300 ease-in-out object-cover ${
-                        index !== 0 ? "hover:scale-110" : ""
-                      }`}
+                      className={`absolute w-72 h-44 rounded-lg transition-transform translate-x-2 translate-y-0 duration-300 ease-in-out object-cover`}
                       style={{
                         top: `${index * 5}px`,
                         left: `${index * 10}px`,
                         zIndex: project.images.length - index,
                       }}
+                      width={300}
+                      height={200}
                     />
                   ))}
                 </motion.div>
-                <motion.h5 className="text-sm w-[70%] font-[400] mb-1 text-background">
+                <motion.h5 className="text-sm w-[70%] font-[400] mb-1 text-background pr-2">
                   {project.brief_description}
                 </motion.h5>
               </motion.div>
@@ -183,7 +204,7 @@ const FeaturedProjects: React.FC = () => {
                       <motion.div className="flex h-[21rem] mt-4">
                         <motion.div className=" w-[100%] rounded-lg mr-5 flex justify-center items-center">
                           <Carousel className="w-full">
-                            <CarouselContent className="flex items-center " >
+                            <CarouselContent className="flex items-center ">
                               {project.images.map((src, index) => (
                                 <CarouselItem key={index}>
                                   <Card>
