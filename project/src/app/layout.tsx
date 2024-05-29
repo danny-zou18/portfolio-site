@@ -6,6 +6,7 @@ import { ThemeProvider } from "../components/theme-provider";
 
 import Navbar from "../components/Navbar";
 import ContactModal from "../components/ContactModal";
+import Overlay from "@/components/Overlay";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
+          <Overlay />
           <ContactModal />
           {children}
         </ThemeProvider>
