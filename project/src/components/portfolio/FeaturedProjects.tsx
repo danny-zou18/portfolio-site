@@ -20,6 +20,7 @@ type featuredProjectType = {
   title: string;
   startDate: Date;
   endDate: Date;
+  brief_description: string;
   description: string;
   skills: string[];
   images: string[];
@@ -31,9 +32,10 @@ const featuredProjects: featuredProjectType[] = [
     title: "LibreTunes",
     startDate: new Date("2024-01-10"),
     endDate: new Date("9999-12-30"),
+    brief_description: "A music player that allows you to listen to music from your local library.",
     description:
       "A music player that allows you to listen to music from your local library.",
-    skills: ["Rust", "Leptos", "CSS", "PostgreSQL", "Docker"],
+    skills: ["Rust", "Leptos", "CSS", "PostgreSQL","RSC APIs", "Docker"],
     images: [
       "/libretunes/libre4.png",
       "/libretunes/libre3.png",
@@ -46,8 +48,8 @@ const featuredProjects: featuredProjectType[] = [
     title: "LifeScape",
     startDate: new Date("2023-05-01"),
     endDate: new Date("9999-12-30"),
-    description:
-      "A mobile application that allows you to leverage a MMO-RPG style environment to gain motivation to do daily tasks to imrpove oneself.",
+    brief_description: "A mobile application that allows you to leverage a MMO-RPG style environment to gain motivation to do daily tasks to imrpove oneself.",
+    description: "A mobile application that allows you to leverage a MMO-RPG style environment to gain motivation to do daily tasks to imrpove oneself.",
     skills: [
       "React Native",
       "TypeScript",
@@ -65,6 +67,7 @@ const featuredProjects: featuredProjectType[] = [
     title: "DevMan - ConUHacks VIII",
     startDate: new Date("2024-01-20"),
     endDate: new Date("2024-01-21"),
+    brief_description: "Participated in ConUHacks VIII with a team of 4 along 800 other participants. Recipient of CSE's DevSecOps Challenge Award. Built ",
     description:
       "Participated in ConUHacks VIII with a team of 4 along 800 other participants. Recipient of CSE's DevSecOps Challenge Award. Built ",
     skills: [
@@ -86,11 +89,6 @@ const featuredProjects: featuredProjectType[] = [
   },
 ];
 
-const images = [
-  "/libretunes/libre3.png",
-  "/libretunes/libre2.png",
-  "/libretunes/libre1.png",
-];
 
 const FeaturedProjects: React.FC = () => {
   const [selectedId, setSelectedId] = useState<string>("");
@@ -127,13 +125,13 @@ const FeaturedProjects: React.FC = () => {
                       style={{
                         top: `${index * 5}px`,
                         left: `${index * 10}px`,
-                        zIndex: images.length - index,
+                        zIndex: project.images.length - index,
                       }}
                     />
                   ))}
                 </motion.div>
                 <motion.h5 className="text-sm w-[70%] font-[400] mb-1 text-background">
-                  {project.description}
+                  {project.brief_description}
                 </motion.h5>
               </motion.div>
               <motion.div className="flex flex-row mt-3 ">
