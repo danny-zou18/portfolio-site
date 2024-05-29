@@ -3,8 +3,9 @@
 import React, { useState } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
-
 import Image from "next/image";
+
+import { FaGithub, FaGitlab } from "react-icons/fa";
 
 import {
   Carousel,
@@ -21,8 +22,11 @@ type featuredProjectType = {
   types: string[];
   startDate: Date;
   endDate: Date;
+  github: string | null;
+  gitlab: string | null;
   brief_description: string;
   description: string;
+  how_built: string;
   skills: string[];
   images: string[];
 };
@@ -34,10 +38,14 @@ const featuredProjects: featuredProjectType[] = [
     types: ["Web Application", "Open Source"],
     startDate: new Date("2024-01-10"),
     endDate: new Date("9999-12-30"),
+    github: null,
+    gitlab: "Project Repository ^ https://gitlab.mregirouard.com/libretunes",
     brief_description:
       "A self-hosted music player that allows you listen to music from your local library. Built for collaborative listening experiences.",
     description:
-      "A self-hosted shared music player that allows you listen to music from your local library. Built for collaborative listening experiences.",
+      "LibreTunes is a self-hosted music player designed to make listening a more social experience. LibreTunes includes features like shared playlists, viewing friends` activity and listening along, a shared queue, and more. LibreTunes is the music equivalent of self-hosted movie and TV show platforms like Jellyfin, Plex, Kodi, and others. It is designed for users to run their own server and provide their own audio files for playing. Users can upload new music through the web interface or import an existing library.",
+    how_built:
+      'LibreTunes is built (almost) entirely in Rust using the Leptos web framework. Leptos provides easy ways to write "Server Functions" that make up our API, and serializes/deserilizes data when calling these functions. Our frontend code is compiled to WebAssembly for a highly response UI. Client-side routing also makes our site incredibly fast. We also use Axum webserver and axum-login for login, authentication, and user sessions. User data is stored in PostgreSQL and login session tokens are stored in Redis.',
     skills: ["Rust", "Leptos", "CSS", "PostgreSQL", "RSC APIs", "Docker"],
     images: [
       "/libretunes/libre4.png",
@@ -52,10 +60,15 @@ const featuredProjects: featuredProjectType[] = [
     types: ["Mobile Application", "Open Source", "Founder"],
     startDate: new Date("2023-05-01"),
     endDate: new Date("9999-12-30"),
+    github:
+      "Project Repository ^ https://github.com/danny-zou18/LifeScape | Website Repository ^ https://github.com/danny-zou18/LifeScape-Website",
+    gitlab: null,
     brief_description:
       "A mobile application that allows you to leverage a MMO-RPG style environment to gain motivation to do daily tasks to imrpove oneself.",
     description:
       "A mobile application that allows you to leverage a MMO-RPG style environment to gain motivation to do daily tasks to imrpove oneself.",
+    how_built:
+      "LibreTunes is built with Rust, Leptos, CSS, PostgreSQL, RSC APIs, and Docker.",
     skills: [
       "React Native",
       "TypeScript",
@@ -76,10 +89,15 @@ const featuredProjects: featuredProjectType[] = [
     types: ["Hackathon", "Winner 🏆", "SaaS"],
     startDate: new Date("2024-01-20"),
     endDate: new Date("2024-01-21"),
+    github: null,
+    gitlab:
+      "Merge Analyzer ^ https://gitlab.com/conuhacks_devman/mergeanalyzer | CI/CD Cal.com Implementation ^ https://gitlab.com/conuhacks_devman/demo-testing/cal.com",
     brief_description:
       "Participated in ConUHacks VIII with a team of 4 along 800 other participants. Recipient of CSE's DevSecOps Challenge Award. Built ",
     description:
-      "Participated in ConUHacks VIII with a team of 4 along 800 other participants. Recipient of CSE's DevSecOps Challenge Award. Built ",
+      "Participated in ConUHacks VIII with a team of 4 along 800 other partBadgeicipants. Recipient of CSE's DevSecOps Challenge Award. Built ",
+    how_built:
+      "LibreTunes is built with Rust, Leptos, CSS, PostgreSQL, RSC APIs, and Docker.",
     skills: [
       "Python",
       "Artificial Intelligence",
@@ -123,11 +141,11 @@ const FeaturedProjects: React.FC = () => {
                   {project.title}
                 </motion.h2>
                 <motion.div>
-                  {project.types.map((type, index)=> (
-                    <motion.span>
+                  {project.types.map((type, index) => (
+                    <motion.span key={index}>
                       <span className="card p-1  bg-background rounded-[10px] font-[600] shadow-md cursor-pointer text-[.6rem] mr-2">
                         {type}
-                      </span>                     
+                      </span>
                     </motion.span>
                   ))}
                 </motion.div>
@@ -198,17 +216,72 @@ const FeaturedProjects: React.FC = () => {
                       >
                         Close
                       </motion.button>
-                      <motion.h2 className="text-3xl font-[300] mb-2 text-background">
-                        {project.title}
-                      </motion.h2>
-                      <motion.div className="flex h-[21rem] mt-4">
+                      <motion.div className="flex flex-row justify-between w-11/12">
+                        <motion.div className="flex flex-row text-background">
+                          <motion.h2 className="text-3xl font-[300] mb-2">
+                            {project.title}
+                          </motion.h2>
+                          {project.github &&
+                            project.github.split(" | ").map((link, index) => {
+                              const [title, url] = link.split(" ^ ");
+                              return (
+                                <motion.a
+                                  key={index}
+                                  className="w-10 h-10 flex justify-center items-center ml-4 rounded-full  border-2"
+                                  href={url}
+                                  target="_blank"
+                                  title={title}
+                                  whileHover={{
+                                    scale: 1.2,
+                                    transition: { duration: 0.2 },
+                                    backgroundColor: "#00000070",
+                                  }}
+                                >
+                                  <FaGithub className="text-2xl" />
+                                </motion.a>
+                              );
+                            })}
+
+                          {project.gitlab &&
+                            project.gitlab.split("|").map((link, index) => {
+                              const [title, url] = link.split(" ^ ");
+                              return (
+                                <motion.a
+                                  key={index}
+                                  className="w-10 h-10 flex justify-center items-center ml-4 rounded-full  border-2"
+                                  href={url}
+                                  target="_blank"
+                                  title={title}
+                                  whileHover={{
+                                    scale: 1.2,
+                                    transition: { duration: 0.2 },
+                                    backgroundColor: "#00000070",
+                                  }}
+                                >
+                                  <FaGitlab className="text-2xl" />
+                                </motion.a>
+                              );
+                            })}
+                        </motion.div>
+
+                        <motion.div>
+                          {project.types.map((type, index) => (
+                            <motion.span key={index}>
+                              <span className="card p-2  bg-background rounded-[20px] font-[600] shadow-md cursor-pointer text-[.8rem] mr-2">
+                                {type}
+                              </span>
+                            </motion.span>
+                          ))}
+                        </motion.div>
+                      </motion.div>
+                      <motion.div className="flex h-[21rem] mt-3">
                         <motion.div className=" w-[100%] rounded-lg mr-5 flex justify-center items-center">
-                          <Carousel className="w-full">
+                          <Carousel className="w-[95%]">
                             <CarouselContent className="flex items-center ">
                               {project.images.map((src, index) => (
                                 <CarouselItem key={index}>
                                   <Card>
-                                    <CardContent className="flex items-center justify-center min-h-[21rem] max-h-[21rem] p-2 hover:max-h-full">
+                                    <CardContent className="flex items-center justify-center min-h-[21rem] max-h-[21rem] p-0 hover:max-h-full">
                                       <Image
                                         src={src}
                                         alt={`Project image ${index}`}
@@ -225,9 +298,12 @@ const FeaturedProjects: React.FC = () => {
                             <CarouselNext />
                           </Carousel>
                         </motion.div>
-                        <motion.h5 className="text-sm w-[70%] font-[400] mb-1 text-background">
-                          {project.description}
-                        </motion.h5>
+                        <motion.div className="text-[.95rem] w-[70%] font-[400] mt-[-.5rem] pl-2 mb-1 text-background overflow-y-auto">
+                          <motion.h5>{project.description}</motion.h5>
+                          <motion.h5 className="mt-5">
+                            {project.how_built}
+                          </motion.h5>
+                        </motion.div>
                       </motion.div>
                       <motion.div className="flex flex-row mt-4 ">
                         {project.skills.map((skill, index) => (
