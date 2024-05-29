@@ -93,8 +93,9 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-         typewriter: "typewriter 4s steps(11) forwards",
-         caret: 'typewriter 4s steps(11) forwards, blink 1s steps(11) infinite 4s',
+         typewriter: "typewriter 3s steps(11) forwards",
+         caret: 'typewriter 3s steps(11) forwards, blink 1s steps(11) infinite 3s',
+         'bounce-slow': 'bounce 2s infinite',
       },
       screens: {
         xsm: "320px",

@@ -18,7 +18,7 @@ const TextAnimation: React.FC<TextAnimationProps> = ({ text }) => {
         before:absolute before:inset-0 before:animate-typewriter
         before:bg-background
         after:absolute after:inset-0 after:w-[0.125em] after:animate-caret
-        after:bg-primary text-primary text-2xl">
+        after:bg-primary font-[400] text-primary text-4xl">
         {contactModal.isOpen ? "" : text}
       </h1>
     </div>
