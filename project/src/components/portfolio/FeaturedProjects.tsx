@@ -202,7 +202,7 @@ const FeaturedProjects: React.FC = () => {
               (project) =>
                 project.id === selectedId && (
                   <motion.div
-                    className="bg-primary-foreground rounded-lg p-6 pb-2 shadow-md mx-auto lg:w-[70rem] lg:h-[30rem] sm:w-[40rem] sm:h-[40rem] z-10"
+                    className="bg-primary-foreground rounded-lg p-6 pb-2 shadow-md mx-auto lg:w-[70rem] lg:h-[30rem] xsm:w-[28rem] z-10"
                     layoutId={`card-container-${project.id}`}
                     key={project.id}
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -216,7 +216,7 @@ const FeaturedProjects: React.FC = () => {
                       >
                         Close
                       </motion.button>
-                      <motion.div className="flex lg:flex-row sm:flex-col justify-between w-11/12">
+                      <motion.div className="flex lg:flex-row xsm:flex-col justify-between lg:w-11/12 xsm:w-10/12">
                         <motion.div className="flex flex-row text-background">
                           <motion.h2 className="text-3xl font-[300] mb-2">
                             {project.title}
@@ -264,7 +264,7 @@ const FeaturedProjects: React.FC = () => {
                             })}
                         </motion.div>
 
-                        <motion.div className="sm:mt-2">
+                        <motion.div className="xsm:mt-2">
                           {project.types.map((type, index) => (
                             <motion.span key={index}>
                               <span className="card p-2  bg-background rounded-[20px] font-[600] shadow-md cursor-pointer text-[.8rem] mr-2">
@@ -274,14 +274,14 @@ const FeaturedProjects: React.FC = () => {
                           ))}
                         </motion.div>
                       </motion.div>
-                      <motion.div className="flex lg:flex-row md:flex-col lg:h-[21rem] sm:h-[30rem] mt-3">
+                      <motion.div className="flex lg:flex-row xsm:flex-col lg:h-[21rem] xsm:h-[30rem] mt-3">
                         <motion.div className=" w-[100%] rounded-lg mr-5 flex justify-center items-center">
                           <Carousel className="w-[95%]">
                             <CarouselContent className="flex items-center ">
                               {project.images.map((src, index) => (
                                 <CarouselItem key={index}>
                                   <Card>
-                                    <CardContent className="flex items-center justify-center lg:min-h-[21rem] lg:max-h-[21rem] sm:min-h-[15rem] sm:max-h-[15rem] lg:p-0 sm:p-1 hover:max-h-full">
+                                    <CardContent className="flex items-center justify-center lg:min-h-[21rem] lg:max-h-[21rem] xsm:min-h-[15rem] xsm:max-h-[15rem] lg:p-0 xsm:p-1 hover:max-h-full">
                                       <Image
                                         src={src}
                                         alt={`Project image ${index}`}
@@ -298,18 +298,18 @@ const FeaturedProjects: React.FC = () => {
                             <CarouselNext />
                           </Carousel>
                         </motion.div>
-                        <motion.div className="text-[.95rem] lg:w-[70%] sm:w-[95%] sm:ml-auto sm:mr-auto sm:max-h-[13rem] font-[400] lg:mt-[-.5rem] sm:mt-[1rem] pl-2 mb-1 text-background overflow-y-auto">
+                        <motion.div className="text-[.95rem] lg:w-[70%] lg:min-h-[100%] xsm:w-[95%] xsm:ml-auto xsm:mr-auto xsm:max-h-[11rem] font-[400] lg:mt-[-.5rem] xsm:mt-[1rem] pl-2 mb-1 text-background overflow-y-auto">
                           <motion.h5>{project.description}</motion.h5>
                           <motion.h5 className="mt-5">
                             {project.how_built}
                           </motion.h5>
                         </motion.div>
                       </motion.div>
-                      <motion.div className="flex flex-row lg:mt-4 ">
+                      <motion.div className="flex flex-wrap gap-2 lg:mt-4 xsm:mt-[-2rem] ">
                         {project.skills.map((skill, index) => (
                           <div
                             key={index}
-                            className="card p-2 pl-3 pr-3 bg-background rounded-[10px] font-[600] shadow-md cursor-pointer text-[.9rem] mr-2"
+                            className="card p-2 pl-3 pr-3 bg-background rounded-[10px] font-[600] shadow-md cursor-pointer text-[.9rem]"
                           >
                             <h5>{skill}</h5>
                           </div>
