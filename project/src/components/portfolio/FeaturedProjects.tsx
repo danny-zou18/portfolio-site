@@ -104,7 +104,7 @@ const FeaturedProjects: React.FC = () => {
 
   return (
     <motion.div>
-      <div className="grid grid-cols-2 gap-8 w-[80%] h-[37rem] ml-auto mr-auto">
+      <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-8 2xl:w-[80%] xl:w-[90%] h-[37rem] ml-auto mr-auto">
         {featuredProjects.map((project) => (
           <motion.div
             className={`card p-3 pr-2 bg-primary-foreground rounded-lg shadow-md cursor-pointer transform transition-transform duration-500 hover:scale-105 ${
@@ -134,13 +134,13 @@ const FeaturedProjects: React.FC = () => {
               </motion.div>
 
               <motion.div className="flex h-48 ">
-                <motion.div className="border-0 w-[100%] overflow-hidden bg-red-50 rounded-lg mr-2 relative z-0">
+                <motion.div className="border-0 w-[100%] overflow-hiddenrounded-lg mr-2 relative z-0">
                   {project.images.map((src, index) => (
                     <Image
                       key={index}
                       src={src}
                       alt={`Stacked image ${index}`}
-                      className={`absolute w-72 h-44 rounded-lg transition-transform translate-x-2 translate-y-0 duration-300 ease-in-out object-cover`}
+                      className={`absolute lg:w-72 h-44 md:w-96 rounded-lg transition-transform translate-x-2 translate-y-0 duration-300 ease-in-out object-cover`}
                       style={{
                         top: `${index * 5}px`,
                         left: `${index * 10}px`,
