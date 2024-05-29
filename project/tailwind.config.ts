@@ -96,6 +96,9 @@ const config = {
          typewriter: "typewriter 4s steps(11) forwards",
          caret: 'typewriter 4s steps(11) forwards, blink 1s steps(11) infinite 4s',
       },
+      screens: {
+        xsm: "320px",
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
