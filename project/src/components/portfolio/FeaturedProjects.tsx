@@ -4,6 +4,8 @@ import React, { useState } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 
+import Image from "next/image";
+
 import {
   Carousel,
   CarouselContent,
@@ -11,6 +13,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
 
 type featuredProjectType = {
   id: string;
@@ -69,33 +72,16 @@ const featuredProjects: featuredProjectType[] = [
       "Artificial Intelligence",
       "Prompt Engineering",
       "DevSecOps",
+      "Gitlab",
+      "CI/CD",
+      "Docker",
       "APIs",
     ],
     images: [
-      "https://via.placeholder.com/150",
-      "https://via.placeholder.com/150",
-    ],
-  },
-  {
-    id: "4",
-    title: "FinVis",
-    startDate: new Date("2023-09-01"),
-    endDate: new Date("2024-12-30"),
-    description:
-      "A all-in-one financial visualization tool that allows you to track all your investments.",
-    skills: [
-      "Next.js",
-      "TypeScript",
-      "TailwindCSS",
-      "tRPC",
-      "RPC APIs",
-      "MongoDB",
-      "Nextauth.js",
-      "Docker",
-    ],
-    images: [
-      "https://via.placeholder.com/150",
-      "https://via.placeholder.com/150",
+      "/devman/1.jpg",
+      "/devman/4.jpg",
+      "/devman/2.jpg",
+      "/devman/3.jpg",
     ],
   },
 ];
@@ -197,7 +183,29 @@ const FeaturedProjects: React.FC = () => {
                         {project.title}
                       </motion.h2>
                       <motion.div className="flex h-[21rem] mt-4">
-                        <motion.div className="border-2 w-[100%] rounded-lg mr-5"></motion.div>
+                        <motion.div className=" w-[100%] rounded-lg mr-5 flex justify-center items-center">
+                          <Carousel className="w-full">
+                            <CarouselContent className="flex items-center " >
+                              {project.images.map((src, index) => (
+                                <CarouselItem key={index}>
+                                  <Card>
+                                    <CardContent className="flex items-center justify-center min-h-[21rem] max-h-[21rem] p-2 hover:max-h-full">
+                                      <Image
+                                        src={src}
+                                        alt={`Project image ${index}`}
+                                        width={800}
+                                        height={400}
+                                        className="max-h-full"
+                                      />
+                                    </CardContent>
+                                  </Card>
+                                </CarouselItem>
+                              ))}
+                            </CarouselContent>
+                            <CarouselPrevious />
+                            <CarouselNext />
+                          </Carousel>
+                        </motion.div>
                         <motion.h5 className="text-sm w-[70%] font-[400] mb-1 text-background">
                           {project.description}
                         </motion.h5>
