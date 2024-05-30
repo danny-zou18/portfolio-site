@@ -46,7 +46,7 @@ const featuredProjects: featuredProjectType[] = [
       "LibreTunes is a self-hosted music player designed to make listening a more social experience. LibreTunes includes features like shared playlists, viewing friends` activity and listening along, a shared queue, and more. LibreTunes is the music equivalent of self-hosted movie and TV show platforms like Jellyfin, Plex, Kodi, and others. It is designed for users to run their own server and provide their own audio files for playing. Users can upload new music through the web interface or import an existing library.",
     how_built:
       'LibreTunes is built (almost) entirely in Rust using the Leptos web framework. Leptos provides easy ways to write "Server Functions" that make up our API, and serializes/deserilizes data when calling these functions. Our frontend code is compiled to WebAssembly for a highly response UI. Client-side routing also makes our site incredibly fast. We also use Axum webserver and axum-login for login, authentication, and user sessions. User data is stored in PostgreSQL and login session tokens are stored in Redis.',
-    skills: ["Rust", "Leptos", "CSS", "PostgreSQL", "RSC APIs", "Docker"],
+    skills: ["Rust", "Leptos", "CSS", "PostgreSQL", "RSC APIs", "Docker", "Redis"],
     images: [
       "/libretunes/libre4.png",
       "/libretunes/libre3.png",
@@ -74,6 +74,7 @@ const featuredProjects: featuredProjectType[] = [
       "TypeScript",
       "NativeWind",
       "PostGreSQL",
+      "Firebase",
       "Docker",
     ],
     images: [
@@ -122,10 +123,10 @@ const FeaturedProjects: React.FC = () => {
 
   return (
     <motion.div>
-      <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-8 2xl:w-[80%] xl:w-[90%] h-[37rem] ml-auto mr-auto">
+      <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-8 2xl:w-[80%] xl:w-[90%] lg:mb-0 h-[37rem] md:mb-[35rem] xsm:mb-[40rem] ml-auto mr-auto">
         {featuredProjects.map((project) => (
           <motion.div
-            className={`card p-3 pr-2 bg-primary-foreground rounded-lg shadow-md cursor-pointer transform transition-transform duration-500 hover:scale-105 ${
+            className={`card p-3 pr-2 bg-card rounded-lg shadow-md cursor-pointer transform transition-transform duration-500 hover:scale-105 ${
               selectedId === project.id ? "card-selected" : ""
             }`}
             layoutId={`card-container-${project.id}`}
@@ -173,11 +174,11 @@ const FeaturedProjects: React.FC = () => {
                   {project.brief_description}
                 </motion.h5>
               </motion.div>
-              <motion.div className="flex flex-row mt-3 ">
+              <motion.div className="flex flex-row flex-wrap gap-2 mt-3 ">
                 {project.skills.slice(0, 3).map((skill, index) => (
                   <div
                     key={index}
-                    className="card p-2 pl-3 pr-3 bg-background rounded-[10px] font-[600] shadow-md cursor-pointer text-sm mr-2"
+                    className="card p-2 pl-3 pr-3 bg-background rounded-[10px] font-[600] shadow-md cursor-pointer text-sm"
                   >
                     <h5>{skill}</h5>
                   </div>
@@ -202,7 +203,7 @@ const FeaturedProjects: React.FC = () => {
               (project) =>
                 project.id === selectedId && (
                   <motion.div
-                    className="bg-primary-foreground rounded-lg p-6 pb-2 shadow-md mx-auto lg:w-[70rem] lg:h-[30rem] xsm:w-[28rem] z-10"
+                    className="bg-card rounded-lg p-6 pb-2 shadow-md mx-auto lg:w-[70rem] lg:h-[30rem] xsm:w-[28rem] z-10"
                     layoutId={`card-container-${project.id}`}
                     key={project.id}
                     initial={{ scale: 0.8, opacity: 0 }}
