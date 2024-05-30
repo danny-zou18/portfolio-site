@@ -27,7 +27,7 @@ const experiences = [
     endDate: "Present",
   },
   {
-    title: "Full Stack Mobile Developer and Leader",
+    title: "Mobile Developer and Leader",
     at: "LifeScape",
     type: "Open Source Project",
     type2: "Part Time Unpaid",

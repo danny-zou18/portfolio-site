@@ -4,7 +4,8 @@ import React from "react";
 
 import MainCard from "@/components/about/MainCard";
 import ExperiencesCard from "@/components/about/ExperiencesCard";
-import Cards from "@/components/about/Cards";
+import MyStoryCard from "@/components/about/MyStoryCard";
+import SkillsCard from "@/components/about/SkillsCard";
 
 const AboutPage: React.FC = () => {
   return (
@@ -18,9 +19,8 @@ const AboutPage: React.FC = () => {
         <MainCard />
         <ExperiencesCard />
         <div className="grid grid-cols-2 grid-rows-2 gap-2 w-[46%]">
-            {Array.from({ length: 4 }).map((_, index) => (
-                <Cards key={index} />
-            ))}
+            <MyStoryCard />
+            <SkillsCard />
         </div>
       </div>
     </div>
