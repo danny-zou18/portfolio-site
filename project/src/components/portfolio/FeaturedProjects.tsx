@@ -326,14 +326,5 @@ const FeaturedProjects: React.FC = () => {
   );
 };
 
-interface FeaturedProjectCardProps {
-  project: featuredProjectType;
-}
-
-const FeaturedProjectCard: React.FC<FeaturedProjectCardProps> = ({
-  project,
-}) => {
-  return <div></div>;
-};
 
 export default FeaturedProjects;
