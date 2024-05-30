@@ -3,6 +3,7 @@
 import React from "react";
 
 import MainCard from "@/components/about/MainCard";
+import ExperiencesCard from "@/components/about/ExperiencesCard";
 import Cards from "@/components/about/Cards";
 
 const AboutPage: React.FC = () => {
@@ -15,8 +16,9 @@ const AboutPage: React.FC = () => {
       </div>
       <div className="flex gap-2 w-[90%] h-[37rem] mt-10 mx-auto">
         <MainCard />
-        <div className="grid grid-cols-3 grid-rows-2 gap-2 w-[69%]">
-            {Array.from({ length: 6 }).map((_, index) => (
+        <ExperiencesCard />
+        <div className="grid grid-cols-2 grid-rows-2 gap-2 w-[46%]">
+            {Array.from({ length: 4 }).map((_, index) => (
                 <Cards key={index} />
             ))}
         </div>
