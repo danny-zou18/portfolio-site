@@ -132,9 +132,11 @@ const FeaturedProjects: React.FC = () => {
             layoutId={`card-container-${project.id}`}
             onClick={() => setSelectedId(project.id)}
             key={project.id}
-            initial={{ scale: 1 }}
+            initial={{ scale: 1, opacity: 0 }}
             animate={{ scale: selectedId === project.id ? 1.1 : 1 }} // Increase scale on selected card
-            transition={{ duration: 0.3 }}
+            whileInView={{opacity: 1}}
+            transition={{ duration: .3 }}
+            viewport={{ once: true }}
           >
             <div className="card-content">
               <motion.div className="flex flex-row justify-between  ">

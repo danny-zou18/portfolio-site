@@ -1,4 +1,8 @@
+"use client"
+
 import "./Timeline.css";
+
+import {motion} from 'framer-motion'
 
 function LightenDarkenColor(col: string,amt: number) {
     var usePound = false;
@@ -47,10 +51,14 @@ interface TimelineItemProp {
 
 const TimelineItem: React.FC<TimelineItemProp> = ({ data }) => {
   return (
-    <div
+    <motion.div
       className="
       timeline-item text-background
     "
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+    viewport={{ once: true }}
     >
       <div className="timeline-item-content relative bg-card">
         <span
@@ -88,7 +96,7 @@ const TimelineItem: React.FC<TimelineItemProp> = ({ data }) => {
         )}
         <span className="circle" />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
