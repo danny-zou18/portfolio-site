@@ -1,145 +1,188 @@
 [
-    {
-      "text": "IEEE Hack-A-Damien 2024 @UAlbany",
-      "startdate": "Apr 13 2024",
-      "enddate": "Apr 14 2024",
-      "category": {
-        "tag": "Event",
-        "color": "#f58b60"
-      },
-      "link": {
-        "url": "https://jae77777.itch.io/dungeon-delvers",
-        "text": "Demo Link"
-      }
+  {
+    "text": "Union Developer Project",
+    "startdate": "May 30 2024",
+    "enddate": "Present",
+    "category": {
+      "tag": "Professional Experience",
+      "color": "#6ea2f5"
     },
-    {
-      "text": "LibreTunes - Shared Music Player",
-      "startdate": "Jan 8 2024",
-      "enddate": "Present",
-      "category": {
-        "tag": "Open Source Project",
-        "color": "#aa5a9c"
-      },
-      "link":{
-        "url": "https://gitlab.mregirouard.com/libretunes/",
-        "text": "View Repository"
-      }
+    "link": null
+  },
+  {
+    "text": "LifeScape",
+    "startdate": "May 25 2024",
+    "enddate": "Present",
+    "category": {
+      "tag": "Open Source Project, Founder",
+      "color": "#f78888"
     },
-    {
-        "text": "DevMan - Merge Analysis Tool & Pipeline",
-        "startdate": "Jan 20 2024",
-        "enddate": "Jan 21 2024",
-        "category": {
-          "tag": "Hackathon",
-          "color": "#aa5a9c"
-        },
-        "link":{
-          "url": "https://devpost.com/software/devman-m3exp6",
-          "text": "View Project"
-        }
+    "link": {
+      "url": "https://github.com/danny-zou18/LifeScape",
+      "text": "View Repository"
     },
-    {
-        "text": "PhoneIO - AI Conversation App",
-        "startdate": "Jan 12 2024",
-        "enddate": "Jan 14 2024",
-        "category": {
-          "tag": "Hackathon",
-          "color": "#aa5a9c"
-        },
-        "link":{
-          "url": "https://devpost.com/software/phonio",
-          "text": "View Project"
-        }
-    },  
-    {
-        "text": "Principles of Software - CSCI 2600 at RPI",
-        "startdate": "Jan 8 2024",
-        "enddate": "May 2 2024",
-        "category": {
-          "tag": "Relevant Coursework",
-          "color": "#3db3d0"
-        },
-        "link": {
-          "url": "https://catalog.rpi.edu/preview_course_nopop.php?catoid=22&coid=44604",
-          "text": "View Course Catalog"
-        }
+    "skills": ["React-Native", "Typescript", "Nativewind", "PostgreSQL","Firebase","Docker"]
+  },
+  {
+    "text": "LifeScape Website",
+    "startdate": "May 25 2024",
+    "enddate": "Present",
+    "category": {
+      "tag": "Status Website, Founder",
+      "color": "#f78888"
     },
-    {
-      "text": "Intro to Algorithms - CSCI 2300 at RPI",
-      "startdate": "Jan 8 2024",
-      "enddate": "May 2 2024",
-      "category": {
-        "tag": "Relevant Coursework",
-        "color": "#3db3d0"
-      },
-      "link": {
-        "url": "https://catalog.rpi.edu/preview_course_nopop.php?catoid=12&coid=20387",
-        "text": "View Course Catalog"
-      }
+    "link": {
+      "url": "https://github.com/danny-zou18/LifeScape-Website",
+      "text": "View Repository"
     },
-    {
-      "text": "Computer Organization - CSCI 2500 at RPI",
-      "startdate": "Aug 28 2023",
-      "enddate": "Dec 18 2023",
-      "category": {
-        "tag": "Relevant Coursework",
-        "color": "#3db3d0"
-      },
-      "link": {
-        "url": "https://catalog.rpi.edu/preview_course_nopop.php?catoid=9&coid=14812",
-        "text": "View Course Catalog"
-      }
+    "skills": ["Next.js", "Typescript", "tRPC", "TailwindCSS", "MongoDB", "Prisma"]
+  },
+  {
+    "text": "LibreTunes - Shared Music Player",
+    "startdate": "Jan 8 2024",
+    "enddate": "Present",
+    "category": {
+      "tag": "Open Source Project",
+      "color": "#aa5a9c"
     },
-    {
-      "text": "Foundations of Computer Science - CSCI 2200 at RPI",
-      "startdate": "Aug 28 2023",
-      "enddate": "Dec 18 2023",
-      "category": {
-        "tag": "Relevant Coursework",
-        "color": "#3db3d0"
-      },
-      "link": {
-        "url": "https://www.cs.rpi.edu/~magdon/courses/focs.php",
-        "text": "View Course Material"
-      }
+    "link": {
+      "url": "https://gitlab.mregirouard.com/libretunes/",
+      "text": "View Repository"
     },
-    {
-      "text": "FinVis - Financial Visualization Tool",
-      "startdate": "Sep 1 2023",
-      "enddate": "Dec 31 2023",
-      "category": {
-        "tag": "Open Source Project",
-        "color": "#aa5a9c"
-      },
-      "link": {
-        "url": "https://gitlab.mregirouard.com/finvis",
-        "text": "View Repository"
-      }
+    "skills": ["Rust", "Leptos","CSS", "PostgreSQL","RSC APIs","Docker", "Redis"]
+  },
+  {
+    "text": "DevMan - Merge Analysis Tool & Pipeline",
+    "startdate": "Jan 20 2024",
+    "enddate": "Jan 21 2024",
+    "category": {
+      "tag": "Hackathon",
+      "color": "#e6b1fc"
     },
-    {
-      "text": "Data Structures - CSCI 1200 at RPI",
-      "startdate": "Jan 9 2023",
-      "enddate": "May 4 2023",
-      "category": {
-        "tag": "Relevant Coursework",
-        "color": "#3db3d0"
-      },
-      "link": {
-        "url": "https://www.cs.rpi.edu/academics/courses/spring23/csci1200/",
-        "text": "View Class Website"
-      }
+    "link": {
+      "url": "https://devpost.com/software/devman-m3exp6",
+      "text": "View Project"
     },
-    {
-      "text": "Computer Science I - CSCI 1100 at RPI",
-      "startdate": "Aug 29 2022",
-      "enddate": "Dec 20 2022",
-      "category": {
-        "tag": "Relevant Coursework",
-        "color": "#3db3d0"
-      },
-      "link": {
-        "url": "https://www.cs.rpi.edu/academics/courses/fall22/csci1100/index.html",
-        "text": "View Class Material"
-      }
+    "skills": ["Python", "AI", "llama.cpp", "Gitlab API", "Docker", "CI/CD"]
+  },
+  {
+    "text": "PhoneIO - AI Conversation App",
+    "startdate": "Jan 12 2024",
+    "enddate": "Jan 14 2024",
+    "category": {
+      "tag": "Hackathon",
+      "color": "#e6b1fc"
+    },
+    "link": {
+      "url": "https://devpost.com/software/phonio",
+      "text": "View Project"
+    },
+    "skills": ["Python", "AI", "llama.cpp", "whisper", "google-voice"]
+  },
+  {
+    "text": "Principles of Software - CSCI 2600 at RPI",
+    "startdate": "Jan 8 2024",
+    "enddate": "May 2 2024",
+    "category": {
+      "tag": "Relevant Coursework",
+      "color": "#3db3d0"
+    },
+    "link": {
+      "url": "https://catalog.rpi.edu/preview_course_nopop.php?catoid=22&coid=44604",
+      "text": "View Course Catalog"
     }
+  },
+  {
+    "text": "Intro to Algorithms - CSCI 2300 at RPI",
+    "startdate": "Jan 8 2024",
+    "enddate": "May 2 2024",
+    "category": {
+      "tag": "Relevant Coursework",
+      "color": "#3db3d0"
+    },
+    "link": {
+      "url": "https://catalog.rpi.edu/preview_course_nopop.php?catoid=12&coid=20387",
+      "text": "View Course Catalog"
+    }
+  },
+  {
+    "text": "Computer Organization - CSCI 2500 at RPI",
+    "startdate": "Aug 28 2023",
+    "enddate": "Dec 18 2023",
+    "category": {
+      "tag": "Relevant Coursework",
+      "color": "#3db3d0"
+    },
+    "link": {
+      "url": "https://catalog.rpi.edu/preview_course_nopop.php?catoid=9&coid=14812",
+      "text": "View Course Catalog"
+    }
+  },
+  {
+    "text": "Foundations of Computer Science - CSCI 2200 at RPI",
+    "startdate": "Aug 28 2023",
+    "enddate": "Dec 18 2023",
+    "category": {
+      "tag": "Relevant Coursework",
+      "color": "#3db3d0"
+    },
+    "link": {
+      "url": "https://www.cs.rpi.edu/~magdon/courses/focs.php",
+      "text": "View Course Material"
+    }
+  },
+  {
+    "text": "FinVis - Financial Visualization Tool",
+    "startdate": "Sep 1 2023",
+    "enddate": "Dec 31 2023",
+    "category": {
+      "tag": "Open Source Project",
+      "color": "#aa5a9c"
+    },
+    "link": {
+      "url": "https://gitlab.mregirouard.com/finvis",
+      "text": "View Repository"
+    },
+    "skills": ["Next.js","Typescript","tRPC","NextAuth.js","MongoDB","Mongoose ORM","TailwindCSS"]
+  },
+  {
+    "text": "Personal Website V1",
+    "startdate": "July 1 2023",
+    "enddate": "July 15 2023",
+    "category": {
+      "tag": "Personal Project",
+      "color": "#f78888"
+    },
+    "link": {
+      "url": "https://github.com/danny-zou18/Personal-Website",
+      "text": "View Repository"
+    },
+    "skills": ["Django", "HTML", "CSS", "JavaScript"]
+  },
+  {
+    "text": "Data Structures - CSCI 1200 at RPI",
+    "startdate": "Jan 9 2023",
+    "enddate": "May 4 2023",
+    "category": {
+      "tag": "Relevant Coursework",
+      "color": "#3db3d0"
+    },
+    "link": {
+      "url": "https://www.cs.rpi.edu/academics/courses/spring23/csci1200/",
+      "text": "View Class Website"
+    }
+  },
+  {
+    "text": "Computer Science I - CSCI 1100 at RPI",
+    "startdate": "Aug 29 2022",
+    "enddate": "Dec 20 2022",
+    "category": {
+      "tag": "Relevant Coursework",
+      "color": "#3db3d0"
+    },
+    "link": {
+      "url": "https://www.cs.rpi.edu/academics/courses/fall22/csci1100/index.html",
+      "text": "View Class Material"
+    }
+  }
 ]
