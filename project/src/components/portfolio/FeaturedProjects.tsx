@@ -123,7 +123,7 @@ const FeaturedProjects: React.FC = () => {
 
   return (
     <motion.div>
-      <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-8 2xl:w-[80%] xl:w-[90%] lg:mb-0 h-[37rem] md:mb-[35rem] xsm:mb-[40rem] ml-auto mr-auto">
+      <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-8 2xl:w-[80%] xl:w-[90%] lg:mb-0 h-[37rem]  ml-auto mr-auto">
         {featuredProjects.map((project) => (
           <motion.div
             className={`card p-3 pr-2 bg-card rounded-lg shadow-md cursor-pointer transform transition-transform duration-500 hover:scale-105 ${

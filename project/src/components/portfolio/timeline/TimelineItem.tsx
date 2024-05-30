@@ -64,13 +64,13 @@ const TimelineItem: React.FC<TimelineItemProp> = ({ data }) => {
           {`${data.startdate} - ${data.enddate}`}
         </time>
         <p className="py-4 text-sm">{data.text}</p>
-        <div className="skills flex flex-wrap gap-1 max-w-[50%]">
+        <div className="skills flex flex-wrap gap-1 w-[50%]">
           {data.skills &&
             data.skills.map((skill, i) => (
               <span
                 key={i}
                 className="px-1 rounded-md text-xs "
-                style={{ background: LightenDarkenColor(data.category.color, 60)}}
+                style={{ background: LightenDarkenColor(data.category.color, 50)}}
               >
                 {skill}
               </span>

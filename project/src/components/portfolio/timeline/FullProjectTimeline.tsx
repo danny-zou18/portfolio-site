@@ -8,7 +8,7 @@ const Timeline = () => {
       <div className='
         timeline-container
         flex flex-col relative my-[40px]
-        mt-[25rem]
+        mt-[0rem]
       '>
         {timelineData.map((data, i) => {
           return (
