@@ -14,7 +14,7 @@ const AboutPage: React.FC = () => {
           about me
         </h1>
       </div>
-      <div className="flex gap-2 w-[90%] h-[37rem] mt-10 mx-auto">
+      <div className="flex gap-2 w-[95%] h-[37rem] mt-10 mx-auto">
         <MainCard />
         <ExperiencesCard />
         <div className="grid grid-cols-2 grid-rows-2 gap-2 w-[46%]">

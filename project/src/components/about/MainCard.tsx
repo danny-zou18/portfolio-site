@@ -25,7 +25,7 @@ const MainCard: React.FC = () => {
               className="w-[150px] h-[150px] rounded-full object-cover border-2 border-card"
             ></img>
           </div>
-          <div className="mt-4 w-[90%] flex flex-col items-center">
+          <div className="mt-3 w-[90%] flex flex-col items-center">
             <h1 className="mt-5">Name: Danny Zou</h1>
             <h1 className=" mt-5 flex flex-col items-center">
               Current Occupation: Student at:{" "}
