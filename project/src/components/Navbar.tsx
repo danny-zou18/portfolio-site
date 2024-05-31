@@ -49,13 +49,13 @@ const Navbar: React.FC = () => {
   }, [contactModal]);
   
   return (
-    <div className="flex flew-row justify-between items-center h-14 w-[80%] ml-auto mr-auto pt-2">
+    <div className="flex md:flex-row xsm:flex-col justify-between items-center h-14 w-[80%] ml-auto mr-auto pt-2">
       <div className="flex flex-row  ">
         <NavBtn href="/" whereto="Home" />
         <NavBtn href="/portfolio" whereto="Portfolio" />
         <NavBtn href="/about" whereto="About" />
       </div>
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center md:mt-0 xsm:mt-3">
         <ToggleDarkLightMode />
         <button
           className="p-3 rounded-lg bg-primary text-secondary hover: hover:text-primary hover:bg-secondary ml-5 transition-all duration-300"
