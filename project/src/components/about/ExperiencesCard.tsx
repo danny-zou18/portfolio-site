@@ -68,9 +68,9 @@ const ExperiencesCard: React.FC = () => {
     >
       <Card className="h-full">
         <CardContent className="flex flex-col items-center text-background h-full font-mono">
-          <h1 className="border-b-2 border-background mt-4">
+          <h2 className="border-b-2 border-background mt-4">
             Relevant Experiences
-          </h1>
+          </h2>
           <div className="w-full h-full mt-2 flex flex-col gap-1 rounded-md md:min-h-[26%] sm:min-h-[40rem] xsm:min-h-[45rem] ">
             {experiences.map((experience, index) => (
               <ExperienceCard key={index} data={experience}/>

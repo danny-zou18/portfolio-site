@@ -67,7 +67,7 @@ const ContactModal: React.FC = () => {
   return (
     showModal && (
       <div
-        className={` border-2 flex flex-col bg-background w-[35rem] h-[32rem] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-10 pt-5 shadow-lg rounded-md z-30`}
+        className={` border-2 flex flex-col bg-background md:w-[35rem] xsm:w-[24rem] md:h-[32rem] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-10 pt-5 shadow-lg rounded-md z-30`}
       >
         <motion.div
           className="close-button absolute top-3 right-3 text-2xl rounded-full p-[0.1rem] cursor-pointer"
@@ -78,8 +78,8 @@ const ContactModal: React.FC = () => {
         </motion.div>
         <div className=" border-primary text-[1.7rem] text-primary font-sans">Contact Me</div>
         <form className="w-full h-full" onSubmit={handleSubmit(onSubmit)}>
-          <div className="flex justify-between mt-5 text-primary">
-            <div className="grid w-[48%] max-w-sm items-center gap-1.5">
+          <div className="flex md:flex-row xsm:flex-col xsm:gap-2 justify-between mt-5 text-primary">
+            <div className="grid md:w-[48%] xsm:w-full max-w-sm items-center gap-1.5">
               <Label htmlFor="text">Name</Label>
               <Input
                 type="text"
@@ -89,7 +89,7 @@ const ContactModal: React.FC = () => {
               />
               {errors.name && <span>This field is required</span>}
             </div>
-            <div className="grid w-[48%] max-w-sm items-center gap-1.5">
+            <div className="grid md:w-[48%] xsm:w-full max-w-sm items-center gap-1.5">
               <Label htmlFor="email">Email</Label>
               <Input
                 type="email"
@@ -101,7 +101,7 @@ const ContactModal: React.FC = () => {
             </div>
           </div>
           <div className="mt-5 text-primary">
-            <div className="grid w-[48%] max-w-sm items-center gap-1.5">
+            <div className="grid md:w-[48%] xsm:w-full max-w-sm items-center gap-1.5">
               <Label htmlFor="text" className="flex items-center">
                 Subject{" "}
                 <span className="text-[.8rem] text-gray-400">(Optional)</span>

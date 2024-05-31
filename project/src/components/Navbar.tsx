@@ -52,17 +52,17 @@ const Navbar: React.FC = () => {
   }, [contactModal]);
 
   return (
-    <div className="flex md:flex-row xsm:flex-col justify-between items-center h-14 w-[80%] ml-auto mr-auto pt-2">
+    <div className="flex bg-background md:flex-row xsm:flex-col justify-between items-center py-2 w-[80%] ml-auto mr-auto pt-2 fixed top-0 left-1/2 transform -translate-x-1/2 z-40 ">
       <div className="flex flex-row  ">
         <NavBtn href="/" whereto="Home" />
         <NavBtn href="/portfolio" whereto="Portfolio" />
         <NavBtn href="/about" whereto="About" />
       </div>
       <motion.div
-        // initial={{ opacity: 0 }}
-        // animate={{ opacity: 1 }}
-        // transition={{ delay: 2.5, duration: 1 }}
-        className="flex flex-row items-center md:mt-0 xsm:mt-3 md:absolute md:top-5 md:left-1/2 md:transform md:-translate-x-1/2 xsm:relative"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: .1, duration: 1 }}
+        className="flex flex-row items-center md:mt-0 xsm:mt-3 md:absolute  md:left-1/2 md:transform md:-translate-x-1/2 xsm:relative"
       >
         <div className="flex text-xl gap-2">
           <a

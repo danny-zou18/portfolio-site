@@ -99,6 +99,7 @@ const config = {
       },
       screens: {
         xsm: "320px",
+        mac: "1440px"
       }
     },
   },

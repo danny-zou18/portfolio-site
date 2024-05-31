@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center items-center overflow-hidden w-[80%] h-[80vh] ml-auto mr-auto  p-10 ">
+    <main className="flex flex-col justify-center items-center overflow-hidden w-[80%] h-[80vh] mt-10 ml-auto mr-auto  p-10 ">
       <TextAnimation text="Hello, I am Danny Zou." />
       <motion.a
         href="/Danny_Zou_Resume.pdf"
