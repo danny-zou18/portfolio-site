@@ -16,14 +16,17 @@ const AboutPage: React.FC = () => {
           about me
         </h1>
       </div>
-      <div className="flex gap-2 w-[95%] h-[37rem] mt-10 mx-auto">
-        <MainCard />
-        <ExperiencesCard />
-        <SkillsCard />
-        <div className="grid grid-cols-1 grid-rows-2 gap-2 w-[23%]">
+      <div className="flex xl:flex-row gap-1 md:flex-col sm:flex-col xsm:flex-col w-[95%] h-[37rem] mt-10 mx-auto">
+        <div className="flex md:flex-row sm:flex-col xsm:flex-col xl:w-[54%] md:w-full gap-1">
+          <MainCard />
+          <ExperiencesCard />
+        </div>
+        <div className="flex md:flex-row sm:flex-col xsm:flex-col gap-1 xl:w-[46%] xl:h-full md:w-full md:max-h-[100%]">
+          <SkillsCard />
+          <div className="grid grid-cols-1 grid-rows-2 gap-1 xl:w-[50%] sm:w-[100%] xsm:w-[100%]">
             <MyStoryCard />
-            
             <CertificationsCard />
+          </div>
         </div>
       </div>
     </div>

@@ -61,7 +61,7 @@ const experiences = [
 const ExperiencesCard: React.FC = () => {
   return (
     <motion.div
-      className="max-w-[25%] min-w-[25%] h-full"
+      className="md:max-w-[46.3%] md:min-w-[46.3%] sm:w-full xsm:w-full"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -71,7 +71,7 @@ const ExperiencesCard: React.FC = () => {
           <h1 className="border-b-2 border-background mt-4">
             Relevant Experiences
           </h1>
-          <div className="w-full h-full mt-2 flex flex-col gap-1 rounded-md">
+          <div className="w-full h-full mt-2 flex flex-col gap-1 rounded-md md:min-h-[26%] sm:min-h-[40rem] xsm:min-h-[45rem] ">
             {experiences.map((experience, index) => (
               <ExperienceCard key={index} data={experience}/>
             ))}
@@ -113,7 +113,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ data }) => {
           </h1>
         </div>
       </div>
-      <div className="absolute bottom-2 left-2 w-[50%] text-card max-h-[50%] overflow-y-auto text-xs">
+      <div className="absolute md:bottom-2 xsm:bottom-6 left-2 w-[50%] text-card max-h-[50%] overflow-y-auto text-xs">
         {data.description}
       </div>
       <time className="text-xs text-accent absolute bottom-2 right-2">

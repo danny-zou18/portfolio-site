@@ -195,7 +195,7 @@ const SkillsCard = () => {
 
   return (
     <motion.div
-      className="max-w-[23%] min-w-[23%] h-full"
+      className="md:max-w-[50%] md:min-w-[50%] sm:w-[100%] xsm:w-[100%]  h-full"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}

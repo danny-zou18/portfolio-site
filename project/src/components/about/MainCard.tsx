@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const MainCard: React.FC = () => {
   return (
     <motion.div
-      className="max-w-[29%] min-w-[29%] h-full"
+      className="md:max-w-[53.7%] md:min-w-[53.7%] sm:w-full xsm:w-full"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -27,7 +27,7 @@ const MainCard: React.FC = () => {
           </div>
           <div className="mt-3 w-[90%] flex flex-col items-center">
             <h1 className="mt-5">Name: Danny Zou</h1>
-            <h1 className=" mt-5 flex flex-col items-center">
+            <h1 className=" mt-5 flex flex-col items-center text-center">
               Current Occupation: Student at:{" "}
               <a
                 href="https://www.rpi.edu/"
@@ -37,9 +37,9 @@ const MainCard: React.FC = () => {
                 Rensselaer Polytechnic Institute{" "}
               </a>
             </h1>
-            <h1 className="mt-5">Grade: Junior</h1>
+            <h1 className="mt-5">Grade: Junior, Class of 2026</h1>
             <h1 className="mt-5">GPA: 3.44</h1>
-            <h1 className=" mt-5 flex flex-col items-center">
+            <h1 className=" mt-5 flex flex-col items-center text-center">
               Hobbies:{" "}
               <span>Coding, Gym, Rock Climbing, Chilling with friends{" "}</span>
                 
