@@ -71,7 +71,7 @@ const ExperiencesCard: React.FC = () => {
           <h1 className="border-b-2 border-background mt-4">
             Relevant Experiences
           </h1>
-          <div className="w-full h-full mt-2 flex flex-col gap-1 bg-red-50">
+          <div className="w-full h-full mt-2 flex flex-col gap-1 rounded-md">
             {experiences.map((experience, index) => (
               <ExperienceCard key={index} data={experience}/>
             ))}
@@ -98,7 +98,7 @@ interface ExperienceCardProps {
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ data }) => {
   return (
-    <div className="bg-background rounded-md text-[.8rem] h-[25%] p-2 relative">
+    <div className="bg-background rounded-md overflow-hidden text-[.8rem] h-[25%] p-2 relative">
       <div className="flex flex-col text-card">
         {data.title}
         <div className="flex justify-between text-accent">

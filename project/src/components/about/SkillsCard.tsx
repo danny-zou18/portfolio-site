@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -59,7 +60,6 @@ const programmingLanguages: skillsProp[] = [
     icon: SiCplusplus,
     level: "Beginner",
   },
-  
 ];
 
 import { FaReact } from "react-icons/fa";
@@ -106,7 +106,7 @@ const frameworks: skillsProp[] = [
     icon: SiDjango,
     level: "Beginner",
   },
-]
+];
 
 import { SiPostgresql, SiMongoose, SiPrisma } from "react-icons/si";
 import { DiMongodb } from "react-icons/di";
@@ -136,8 +136,7 @@ const databases: skillsProp[] = [
     icon: SiMongoose,
     level: "Beginner",
   },
-  
-]
+];
 
 import { FaGithub, FaGitlab, FaNodeJs, FaDocker } from "react-icons/fa";
 import { DiRedis } from "react-icons/di";
@@ -168,7 +167,7 @@ const tools: skillsProp[] = [
     icon: DiRedis,
     level: "Beginner",
   },
-]
+];
 
 import { FaFedora, FaWindows } from "react-icons/fa";
 import { SiMacos } from "react-icons/si";
@@ -189,10 +188,11 @@ const operatingSystems: skillsProp[] = [
     icon: SiMacos,
     level: "Intermediate",
   },
-]
-
+];
 
 const SkillsCard = () => {
+  const { theme, setTheme } = useTheme();
+
   return (
     <motion.div
       className="max-w-[23%] min-w-[23%] h-full"
@@ -203,14 +203,26 @@ const SkillsCard = () => {
       <Card className="h-full">
         <CardContent className="flex flex-col items-center text-background relative h-full font-mono">
           <h1 className="border-b-2 border-background mt-4">My Skills</h1>
-          <div className="flex items-center justify-center flex-wrap gap-1 mt-2 text-xs">
-            <h1 className="bg-red-400 flex justify-center items-center  rounded-full px-2">
+          <div className="flex items-center justify-center flex-wrap gap-1 mt-2 text-xs text-card">
+            <h1
+              className={`${
+                theme === "dark" ? "bg-gray-500" : "bg-gray-400"
+              } flex justify-center items-center  rounded-full px-2`}
+            >
               Beginner
             </h1>
-            <h1 className=" bg-green-400 flex justify-center items-center px-1 rounded-full">
+            <h1
+              className={`${
+                theme === "dark" ? "bg-gray-700" : "bg-gray-300"
+              } flex justify-center items-center px-1 rounded-full`}
+            >
               Intermediate
             </h1>
-            <h1 className=" bg-blue-400 flex justify-center items-center  rounded-full px-1">
+            <h1
+              className={`${
+                theme === "dark" ? "bg-gray-900" : "bg-gray-100"
+              } flex justify-center items-center  rounded-full px-1`}
+            >
               Professional
             </h1>
           </div>
@@ -223,16 +235,29 @@ const SkillsCard = () => {
                 {programmingLanguages.map((language, index) => {
                   const level = language.level;
                   let background: string;
-                  if (level === "Beginner") {
-                    background = "bg-red-400";
-                  } else if (level === "Intermediate") {
-                    background = "bg-green-400";
+                  if (theme === "dark") {
+                    if (level === "Beginner") {
+                      background = "bg-gray-500";
+                    } else if (level === "Intermediate") {
+                      background = "bg-gray-700";
+                    } else {
+                      background = "bg-gray-900";
+                    }
                   } else {
-                    background = "bg-blue-400";
+                    if (level === "Beginner") {
+                      background = "bg-gray-400";
+                    } else if (level === "Intermediate") {
+                      background = "bg-gray-300";
+                    } else {
+                      background = "bg-gray-100";
+                    }
                   }
 
                   return (
-                    <h1 key={index} className={`mt-2 flex items-center ${background} px-2 rounded-full`} >
+                    <h1
+                      key={index}
+                      className={`mt-2 flex items-center ${background} text-card px-2 rounded-full`}
+                    >
                       {language.icon && <language.icon className="mr-2" />}
                       <h1 className="text-sm">{language.title}</h1>
                     </h1>
@@ -248,16 +273,29 @@ const SkillsCard = () => {
                 {frameworks.map((framework, index) => {
                   const level = framework.level;
                   let background: string;
-                  if (level === "Beginner") {
-                    background = "bg-red-400";
-                  } else if (level === "Intermediate") {
-                    background = "bg-green-400";
+                  if (theme === "dark") {
+                    if (level === "Beginner") {
+                      background = "bg-gray-500";
+                    } else if (level === "Intermediate") {
+                      background = "bg-gray-700";
+                    } else {
+                      background = "bg-gray-900";
+                    }
                   } else {
-                    background = "bg-blue-400";
+                    if (level === "Beginner") {
+                      background = "bg-gray-400";
+                    } else if (level === "Intermediate") {
+                      background = "bg-gray-300";
+                    } else {
+                      background = "bg-gray-100";
+                    }
                   }
 
                   return (
-                    <h1 key={index} className={`mt-2 flex items-center ${background} px-2 rounded-full`} >
+                    <h1
+                      key={index}
+                      className={`mt-2 flex items-center ${background} text-card px-2 rounded-full`}
+                    >
                       {framework.icon && <framework.icon className="mr-2" />}
                       <h1 className="text-sm">{framework.title}</h1>
                     </h1>
@@ -266,23 +304,34 @@ const SkillsCard = () => {
               </div>
             </div>
             <div className="mt-4  w-full flex flex-col items-center">
-              <h1 className="border-b-[1px] text-sm">
-                Databases:
-              </h1>
+              <h1 className="border-b-[1px] text-sm">Databases:</h1>
               <div className="max-h-[6.3rem] overflow-y-auto flex flex-wrap gap-2 justify-center">
                 {databases.map((database, index) => {
                   const level = database.level;
                   let background: string;
-                  if (level === "Beginner") {
-                    background = "bg-red-400";
-                  } else if (level === "Intermediate") {
-                    background = "bg-green-400";
+                  if (theme === "dark") {
+                    if (level === "Beginner") {
+                      background = "bg-gray-500";
+                    } else if (level === "Intermediate") {
+                      background = "bg-gray-700";
+                    } else {
+                      background = "bg-gray-900";
+                    }
                   } else {
-                    background = "bg-blue-400";
+                    if (level === "Beginner") {
+                      background = "bg-gray-400";
+                    } else if (level === "Intermediate") {
+                      background = "bg-gray-300";
+                    } else {
+                      background = "bg-gray-100";
+                    }
                   }
 
                   return (
-                    <h1 key={index} className={`mt-2 flex items-center ${background} px-2 rounded-full`} >
+                    <h1
+                      key={index}
+                      className={`mt-2 flex items-center ${background} text-card px-2 rounded-full`}
+                    >
                       {database.icon && <database.icon className="mr-2" />}
                       <h1 className="text-sm">{database.title}</h1>
                     </h1>
@@ -295,7 +344,10 @@ const SkillsCard = () => {
               <div className="max-h-[6.3rem] overflow-y-auto flex flex-wrap gap-2 justify-center">
                 {databases.map((database, index) => {
                   return (
-                    <h1 key={index} className={`mt-2 flex items-center border-[1px] border-background px-2 rounded-full`} >
+                    <h1
+                      key={index}
+                      className={`mt-2 flex items-center border-[1px] border-background px-2 rounded-full`}
+                    >
                       {database.icon && <database.icon className="mr-2" />}
                       <h1 className="text-sm">{database.title}</h1>
                     </h1>
@@ -308,8 +360,13 @@ const SkillsCard = () => {
               <div className="max-h-[6.3rem] overflow-y-auto flex flex-wrap gap-2 justify-center">
                 {operatingSystems.map((operatingSystem, index) => {
                   return (
-                    <h1 key={index} className={`mt-2 flex items-center border-[1px] border-background px-2 rounded-full`} >
-                      {operatingSystem.icon && <operatingSystem.icon className="mr-2" />}
+                    <h1
+                      key={index}
+                      className={`mt-2 flex items-center border-[1px] border-background px-2 rounded-full`}
+                    >
+                      {operatingSystem.icon && (
+                        <operatingSystem.icon className="mr-2" />
+                      )}
                       <h1 className="text-sm">{operatingSystem.title}</h1>
                     </h1>
                   );
