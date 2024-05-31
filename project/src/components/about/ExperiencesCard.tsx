@@ -61,14 +61,14 @@ const experiences = [
 const ExperiencesCard: React.FC = () => {
   return (
     <motion.div
-      className="w-[25%] h-full"
+      className="max-w-[25%] h-full"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
     >
       <Card className="h-full">
         <CardContent className="flex flex-col items-center text-background h-full font-mono">
-          <h1 className="border-b-2 border-background mt-5">
+          <h1 className="border-b-2 border-background mt-4">
             Relevant Experiences
           </h1>
           <div className="w-full h-full mt-2 flex flex-col gap-1 bg-red-50">

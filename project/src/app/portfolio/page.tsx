@@ -13,7 +13,7 @@ const PortfolioPage: React.FC = () => {
         </h1>
       </div>
       <FeaturedProjects />
-      <div className="lg:mt-[5rem] lg:mb-[2rem] xsm:mt-[30rem] xsm:mb-[2rem] flex flex-col items-center">
+      <div className="lg:mt-[5rem] lg:mb-[2rem] xsm:mt-[35rem] xsm:mb-[2rem] flex flex-col items-center">
         <h1 className="font-mono mb-2">full portfolio timeline</h1>
         <RiArrowDownWideFill className=" animate-bounce-slow text-primary text-4xl" />
       </div> 

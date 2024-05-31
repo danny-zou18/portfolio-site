@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import { Card, CardContent } from "@/components/ui/card";
 
-const MyStoryCard = () => {
+const CourseworksCard = () => {
   return (
     <motion.div
       className="h-full"
@@ -14,14 +14,15 @@ const MyStoryCard = () => {
       viewport={{ once: true }}
     >
       <Card className="h-full">
-        <CardContent className="flex flex-col items-center text-background h-full font-mono">
+        <CardContent className="flex flex-col items-center text-background relative h-full font-mono">
           <h1 className="border-b-2 border-background mt-4">
-            My Story
+            Relevant Courseworks
           </h1>
+
         </CardContent>
       </Card>
     </motion.div>
   );
 };
 
-export default MyStoryCard;
+export default CourseworksCard;

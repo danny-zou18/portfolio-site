@@ -6,6 +6,7 @@ import MainCard from "@/components/about/MainCard";
 import ExperiencesCard from "@/components/about/ExperiencesCard";
 import MyStoryCard from "@/components/about/MyStoryCard";
 import SkillsCard from "@/components/about/SkillsCard";
+import CourseworksCard from "@/components/about/CourseworksCard";
 
 const AboutPage: React.FC = () => {
   return (
@@ -18,9 +19,11 @@ const AboutPage: React.FC = () => {
       <div className="flex gap-2 w-[95%] h-[37rem] mt-10 mx-auto">
         <MainCard />
         <ExperiencesCard />
-        <div className="grid grid-cols-2 grid-rows-2 gap-2 w-[46%]">
+        <SkillsCard />
+        <div className="grid grid-cols-1 grid-rows-2 gap-2 w-[23%]">
             <MyStoryCard />
-            <SkillsCard />
+            
+            <CourseworksCard />
         </div>
       </div>
     </div>

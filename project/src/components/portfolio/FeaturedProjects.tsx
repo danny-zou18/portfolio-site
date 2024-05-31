@@ -205,7 +205,7 @@ const FeaturedProjects: React.FC = () => {
               (project) =>
                 project.id === selectedId && (
                   <motion.div
-                    className="bg-card rounded-lg p-6 pb-2 shadow-md mx-auto lg:w-[70rem] lg:h-[30rem] xsm:w-[28rem] z-10"
+                    className="bg-card rounded-lg p-6 pb-2 shadow-md mx-auto lg:w-[70rem] lg:h-[30rem] xsm:w-[28rem] overflow-y-auto z-10"
                     layoutId={`card-container-${project.id}`}
                     key={project.id}
                     initial={{ scale: 0.8, opacity: 0 }}
