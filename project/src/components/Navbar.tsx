@@ -9,6 +9,9 @@ import useContactModal from "@/hooks/useContactModal";
 import ContactModal from "./ContactModal";
 import ToggleDarkLightMode from "./ToggleDarkLightMode";
 
+import { FaLinkedin, FaGithub, FaGitlab } from "react-icons/fa";
+import { SiDevpost } from "react-icons/si";
+
 interface NavBtnProp {
   href: string;
   whereto: string;
@@ -47,7 +50,7 @@ const Navbar: React.FC = () => {
   const openContact = useCallback(() => {
     contactModal.onOpen();
   }, [contactModal]);
-  
+
   return (
     <div className="flex md:flex-row xsm:flex-col justify-between items-center h-14 w-[80%] ml-auto mr-auto pt-2">
       <div className="flex flex-row  ">
@@ -55,6 +58,53 @@ const Navbar: React.FC = () => {
         <NavBtn href="/portfolio" whereto="Portfolio" />
         <NavBtn href="/about" whereto="About" />
       </div>
+      <motion.div
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // transition={{ delay: 2.5, duration: 1 }}
+        className="flex flex-row items-center md:mt-0 xsm:mt-3 md:absolute md:top-5 md:left-1/2 md:transform md:-translate-x-1/2 xsm:relative"
+      >
+        <div className="flex text-xl gap-2">
+          <a
+            href="https://www.linkedin.com/in/danny-zou-bzs1010/"
+            target="_blank"
+            title="Linkedin"
+            className=" p-2 rounded-full border-2 border-card hover:bg-card hover:text-background hover:border-background transition-all duration-300 "
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://devpost.com/danny-zou18"
+            target="_blank"
+            title="Devpost"
+            className=" p-2 rounded-full border-2 border-card hover:bg-card hover:text-background hover:border-background transition-all duration-300"
+          >
+            <SiDevpost />
+          </a>
+        </div>
+        <img
+          className="w-[50px] h-[50px] rounded-full object-cover ml-2 mr-2"
+          src="/face.jpg"
+        ></img>
+        <div className="flex text-xl gap-2">
+          <a
+            href="https://github.com/danny-zou18"
+            target="_blank"
+            title="Github"
+            className=" p-2 rounded-full border-2 border-card hover:bg-card hover:text-background hover:border-background transition-all duration-300"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://gitlab.mregirouard.com/dannyzou18"
+            target="_blank"
+            title="Gitlab"
+            className=" p-2 rounded-full border-2 border-card hover:bg-card hover:text-background hover:border-background transition-all duration-300"
+          >
+            <FaGitlab />
+          </a>
+        </div>
+      </motion.div>
       <div className="flex flex-row items-center md:mt-0 xsm:mt-3">
         <ToggleDarkLightMode />
         <button
