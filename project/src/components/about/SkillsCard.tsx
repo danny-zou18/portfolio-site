@@ -195,7 +195,7 @@ const operatingSystems: skillsProp[] = [
 const SkillsCard = () => {
   return (
     <motion.div
-      className="max-w-[23%] h-full"
+      className="max-w-[23%] min-w-[23%] h-full"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}

@@ -61,7 +61,7 @@ const experiences = [
 const ExperiencesCard: React.FC = () => {
   return (
     <motion.div
-      className="max-w-[25%] h-full"
+      className="max-w-[25%] min-w-[25%] h-full"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -73,7 +73,7 @@ const ExperiencesCard: React.FC = () => {
           </h1>
           <div className="w-full h-full mt-2 flex flex-col gap-1 bg-red-50">
             {experiences.map((experience, index) => (
-              <ExperienceCard key={index} data={experience} color="red" />
+              <ExperienceCard key={index} data={experience}/>
             ))}
           </div>
         </CardContent>
@@ -94,16 +94,15 @@ interface ExperienceCardProps {
     startDate: string;
     endDate: string;
   };
-  color: string;
 }
 
-const ExperienceCard: React.FC<ExperienceCardProps> = ({ data, color }) => {
+const ExperienceCard: React.FC<ExperienceCardProps> = ({ data }) => {
   return (
-    <div className="bg-green-200 rounded-md text-[.8rem] h-[25%] p-2 relative">
-      <div className="flex flex-col">
+    <div className="bg-background rounded-md text-[.8rem] h-[25%] p-2 relative">
+      <div className="flex flex-col text-card">
         {data.title}
-        <div className="flex justify-between text-neutral-500">
-          <h1 className=" mt-[-2px] text-[.7rem]  text-neutral-500">
+        <div className="flex justify-between text-accent">
+          <h1 className=" mt-[-2px] text-[.7rem]  text-accent">
             {data.at}
           </h1>
           <h1 className="flex flex-col items-end text-[.7rem]">
@@ -114,7 +113,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ data, color }) => {
           </h1>
         </div>
       </div>
-      <div className="absolute bottom-2 left-2 w-[60%] text-xs">
+      <div className="absolute bottom-2 left-2 w-[50%] text-card max-h-[50%] overflow-y-auto text-xs">
         {data.description}
       </div>
       <time className="text-xs text-accent absolute bottom-2 right-2">

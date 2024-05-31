@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const MainCard: React.FC = () => {
   return (
     <motion.div
-      className="max-w-[29%] h-full"
+      className="max-w-[29%] min-w-[29%] h-full"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
