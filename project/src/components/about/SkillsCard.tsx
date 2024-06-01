@@ -138,7 +138,7 @@ const databases: skillsProp[] = [
   },
 ];
 
-import { FaGithub, FaGitlab, FaNodeJs, FaDocker } from "react-icons/fa";
+import { FaGithub, FaGitlab, FaNodeJs, FaDocker, FaAws } from "react-icons/fa";
 import { DiRedis } from "react-icons/di";
 
 const tools: skillsProp[] = [
@@ -167,6 +167,11 @@ const tools: skillsProp[] = [
     icon: DiRedis,
     level: "Beginner",
   },
+  {
+    title: "AWS Web Services",
+    icon: FaAws,
+    level: "Beginner",
+  }
 ];
 
 import { FaFedora, FaWindows } from "react-icons/fa";
@@ -342,7 +347,7 @@ const SkillsCard = () => {
             <div className="mt-4  w-full flex flex-col items-center">
               <h1 className="border-b-[1px] text-sm border-background ">Tools</h1>
               <div className="max-h-[6.3rem] overflow-y-auto flex flex-wrap gap-2 justify-center">
-                {databases.map((database, index) => {
+                {tools.map((database, index) => {
                   return (
                     <span
                       key={index}
