@@ -228,7 +228,7 @@ const SkillsCard = () => {
           </div>
           <div className="mt-4 overflow-y-auto w-full">
             <div className="  w-full flex flex-col items-center">
-              <div className="border-b-[1px] text-sm">
+              <div className="border-b-[1px] text-sm border-background ">
                 Programming Languages:
               </div>
               <div className="max-h-[6.3rem] overflow-y-auto flex flex-wrap gap-2 justify-center">
@@ -254,19 +254,19 @@ const SkillsCard = () => {
                   }
 
                   return (
-                    <h1
+                    <span
                       key={index}
                       className={`mt-2 flex items-center ${background} text-card px-2 rounded-full`}
                     >
                       {language.icon && <language.icon className="mr-2" />}
                       <h1 className="text-sm">{language.title}</h1>
-                    </h1>
+                    </span>
                   );
                 })}
               </div>
             </div>
             <div className="mt-4  w-full flex flex-col items-center">
-              <h1 className="border-b-[1px] text-sm">
+              <h1 className="border-b-[1px] text-sm border-background ">
                 Frameworks and Libraries:
               </h1>
               <div className="max-h-[6.3rem] overflow-y-auto flex flex-wrap gap-2 justify-center">
@@ -292,19 +292,19 @@ const SkillsCard = () => {
                   }
 
                   return (
-                    <h1
+                    <span
                       key={index}
                       className={`mt-2 flex items-center ${background} text-card px-2 rounded-full`}
                     >
                       {framework.icon && <framework.icon className="mr-2" />}
                       <h1 className="text-sm">{framework.title}</h1>
-                    </h1>
+                    </span>
                   );
                 })}
               </div>
             </div>
             <div className="mt-4  w-full flex flex-col items-center">
-              <h1 className="border-b-[1px] text-sm">Databases:</h1>
+              <h1 className="border-b-[1px] border-background text-sm">Databases:</h1>
               <div className="max-h-[6.3rem] overflow-y-auto flex flex-wrap gap-2 justify-center">
                 {databases.map((database, index) => {
                   const level = database.level;
@@ -328,39 +328,39 @@ const SkillsCard = () => {
                   }
 
                   return (
-                    <h1
+                    <span
                       key={index}
                       className={`mt-2 flex items-center ${background} text-card px-2 rounded-full`}
                     >
                       {database.icon && <database.icon className="mr-2" />}
                       <h1 className="text-sm">{database.title}</h1>
-                    </h1>
+                    </span>
                   );
                 })}
               </div>
             </div>
             <div className="mt-4  w-full flex flex-col items-center">
-              <h1 className="border-b-[1px] text-sm">Tools</h1>
+              <h1 className="border-b-[1px] text-sm border-background ">Tools</h1>
               <div className="max-h-[6.3rem] overflow-y-auto flex flex-wrap gap-2 justify-center">
                 {databases.map((database, index) => {
                   return (
-                    <h1
+                    <span
                       key={index}
                       className={`mt-2 flex items-center border-[1px] border-background px-2 rounded-full`}
                     >
                       {database.icon && <database.icon className="mr-2" />}
                       <h1 className="text-sm">{database.title}</h1>
-                    </h1>
+                    </span>
                   );
                 })}
               </div>
             </div>
             <div className="mt-4  w-full flex flex-col items-center">
-              <h1 className="border-b-[1px] text-sm">Operating Systems</h1>
+              <h1 className="border-b-[1px] text-sm border-background ">Operating Systems</h1>
               <div className="max-h-[6.3rem] overflow-y-auto flex flex-wrap gap-2 justify-center">
                 {operatingSystems.map((operatingSystem, index) => {
                   return (
-                    <h1
+                    <span
                       key={index}
                       className={`mt-2 flex items-center border-[1px] border-background px-2 rounded-full`}
                     >
@@ -368,7 +368,7 @@ const SkillsCard = () => {
                         <operatingSystem.icon className="mr-2" />
                       )}
                       <h1 className="text-sm">{operatingSystem.title}</h1>
-                    </h1>
+                    </span>
                   );
                 })}
               </div>

@@ -84,7 +84,7 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ data }) => {
         </div>
       </div>
       <span className="ml-[45px]">
-        <a href={data.url} target="_blank" className="border-[1px] px-2 py-1 mt-1 rounded-full inline-flex items-center text-sm font-bold hover:bg-gray-200 ">
+        <a href={data.url} target="_blank" className="border-[1px] border-background px-2 py-1 mt-1 rounded-full inline-flex items-center text-sm font-bold hover:bg-gray-200 ">
           Show Credentials <IoOpenOutline className="ml-2 text-md" />
         </a>
       </span>
