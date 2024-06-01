@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -19,11 +20,14 @@ const MainCard: React.FC = () => {
             className="w-full bg-cover bg-center  h-64 flex justify-center items-center border-2 border-card rounded-lg"
             style={{ backgroundImage: "url(/background1.jpg" }}
           >
-            <img
+            <Image
               src="/face.jpg"
               alt="Me"
-              className="w-[150px] h-[150px] rounded-full object-cover border-2 border-card"
-            ></img>
+              width={150}
+              height={150}
+              className="rounded-full w-[150px] h-[150px] border-2 border-card"
+              style={{ objectFit: "cover" }}
+            />
           </div>
           <div className="mt-3 w-[90%] flex flex-col items-center">
             <h1 className="mt-5">Name: Danny Zou</h1>
@@ -41,9 +45,7 @@ const MainCard: React.FC = () => {
             <h1 className="mt-5">GPA: 3.44</h1>
             <h1 className=" mt-5 flex flex-col items-center text-center">
               Hobbies:{" "}
-              <span>Coding, Gym, Rock Climbing, Chilling with friends{" "}</span>
-                
-              
+              <span>Coding, Gym, Rock Climbing, Chilling with friends </span>
             </h1>
           </div>
         </CardContent>

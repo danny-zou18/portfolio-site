@@ -32,7 +32,7 @@ export default function Home() {
         className="absolute bottom-5 flex gap-16"
       >
         <Link href="/portfolio" className="">
-          <h1 className="font-mono mb-2">learn more about what I've done</h1>
+          <h1 className="font-mono mb-2">learn more about what I&apos;ve done</h1>
           <RiArrowDownWideFill className=" animate-bounce-slow text-primary text-4xl mx-auto" />
         </Link>
         <Link href="/about" className="">

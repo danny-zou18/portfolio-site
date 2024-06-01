@@ -4,6 +4,7 @@ import React, { useCallback } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 import useContactModal from "@/hooks/useContactModal";
 import ContactModal from "./ContactModal";
@@ -61,7 +62,7 @@ const Navbar: React.FC = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: .1, duration: 1 }}
+        transition={{ delay: 0.1, duration: 1 }}
         className="flex flex-row items-center md:mt-0 xsm:mt-3 md:absolute  md:left-1/2 md:transform md:-translate-x-1/2 xsm:relative"
       >
         <div className="flex text-xl gap-2">
@@ -82,10 +83,14 @@ const Navbar: React.FC = () => {
             <SiDevpost />
           </a>
         </div>
-        <img
-          className="w-[50px] h-[50px] rounded-full object-cover ml-2 mr-2"
+        <Image
           src="/face.jpg"
-        ></img>
+          alt="Me"
+          width={50}
+          height={50}
+          className="object-cover w-[50px] h-[50px] rounded-full ml-2 mr-2 overflow-hidden"
+          style={{ objectPosition: "center" }} // Adjust as needed: 'top', 'bottom', etc.
+        />
         <div className="flex text-xl gap-2">
           <a
             href="https://github.com/danny-zou18"

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -68,11 +69,13 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ data }) => {
   return (
     <div className="flex flex-col">
       <div className="flex items-center">
-        <img
+        <Image
           className="w-[45px] h-[45px]"
           src={data.image}
           alt="aws logo"
-        ></img>
+          width={45}
+          height={45}
+        />
         <div className="flex flex-col text-sm ml-2">
           <h1 className="font-bold ">{data.title}</h1>
           <h2 className="text-xs">{data.from}</h2>
@@ -84,7 +87,11 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ data }) => {
         </div>
       </div>
       <span className="ml-[45px]">
-        <a href={data.url} target="_blank" className="border-[1px] border-background px-2 py-1 mt-1 rounded-full inline-flex items-center text-sm font-bold hover:bg-gray-200 ">
+        <a
+          href={data.url}
+          target="_blank"
+          className="border-[1px] border-background px-2 py-1 mt-1 rounded-full inline-flex items-center text-sm font-bold hover:bg-gray-200 "
+        >
           Show Credentials <IoOpenOutline className="ml-2 text-md" />
         </a>
       </span>
