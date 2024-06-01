@@ -30,14 +30,15 @@ const ContactModal: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormValues>();
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     try {
       console.log(data);
       await sendEmail(data);
+      reset();
       contactModal.onClose();
-      console.log("email sent")
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -67,10 +68,12 @@ const ContactModal: React.FC = () => {
         >
           <IoClose className="mr-auto ml-auto" />
         </motion.div>
-        <div className=" border-primary text-[1.7rem] text-primary font-sans">Contact Me</div>
+        <div className=" border-primary text-[1.7rem] text-primary font-sans">
+          Contact Me
+        </div>
         <form className="w-full h-full" onSubmit={handleSubmit(onSubmit)}>
           <div className="flex md:flex-row xsm:flex-col xsm:gap-2 justify-between mt-5 text-primary">
-            <div className="grid md:w-[48%] xsm:w-full max-w-sm items-center gap-1.5">
+            <div className="grid md:w-[48%] xsm:w-full max-w-sm items-center gap-1.5 relative">
               <Label htmlFor="text">Name</Label>
               <Input
                 type="text"
@@ -78,9 +81,9 @@ const ContactModal: React.FC = () => {
                 className="bg-primary text-secondary"
                 {...register("name", { required: true })}
               />
-              {errors.name && <span>This field is required</span>}
+              <div className="absolute top-0 right-2 text-xs text-red-500">{errors.name && <span>This field is required</span>}</div>
             </div>
-            <div className="grid md:w-[48%] xsm:w-full max-w-sm items-center gap-1.5">
+            <div className="grid md:w-[48%] xsm:w-full max-w-sm items-center gap-1.5 relative">
               <Label htmlFor="email">Email</Label>
               <Input
                 type="email"
@@ -88,7 +91,7 @@ const ContactModal: React.FC = () => {
                 className="bg-primary text-secondary"
                 {...register("email", { required: true })}
               />
-              {errors.email && <span>This field is required</span>}
+              <div className="absolute top-0 right-2 text-xs text-red-500">{errors.email && <span>This field is required</span>}</div>
             </div>
           </div>
           <div className="mt-5 text-primary">
@@ -103,10 +106,9 @@ const ContactModal: React.FC = () => {
                 className="bg-primary text-secondary"
                 {...register("subject", { required: false })}
               />
-              {errors.subject && <span>This field is required</span>}
             </div>
           </div>
-          <div className="grid w-full gap-1.5 mt-5 text-primary ">
+          <div className="grid w-full gap-1.5 mt-5 text-primary relative ">
             <Label htmlFor="message">Message</Label>
             <Textarea
               placeholder="Type your message here."
@@ -115,7 +117,7 @@ const ContactModal: React.FC = () => {
               className="bg-primary text-secondary"
               {...register("message", { required: true })}
             />
-            {errors.message && <span>This field is required</span>}
+            <div className="absolute top-0 right-2 text-xs text-red-500">{errors.message && <span>This field is required</span>}</div>
           </div>
           <button
             type="submit"

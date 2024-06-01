@@ -43,7 +43,7 @@ export const sendEmail = async (formData: FormValues) => {
   resend.emails.send({
     from: "onboarding@resend.dev",
     to: "dzou3814@gmail.com",
-    subject: `From |${senderName}| - Subject: |${subject}| - Email: |${senderEmail}|` || `New message from ${senderName}`,
+    subject: `From | ${senderName} | - Subject: | ${subject} | - Email: | ${senderEmail} |` || `New message from ${senderName}`,
     reply_to: senderEmail,
     text: message,
   });
