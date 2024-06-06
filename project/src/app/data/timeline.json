@@ -1,7 +1,7 @@
 [
   {
     "text": "Union Developer Project",
-    "startdate": "May 30 2024",
+    "startdate": "Jun 15 2024",
     "enddate": "Present",
     "category": {
       "tag": "Professional Experience",
@@ -9,6 +9,20 @@
     },
     "link": null,
     "skills": null
+  },
+  {
+    "text": "Discord Productivity Bot",
+    "startdate": "May 31 2024",
+    "enddate": "Present",
+    "category": {
+      "tag": "Personal Project",
+      "color": "#f78888"
+    },
+    "link": {
+      "url": "https://github.com/danny-zou18/discord-bot-todo",
+      "text": "View Repository"
+    },
+    "skills": ["Python", "AWS CDK", "DynamoDB", "AWS Lambda", "Discord API", "NodeJS"]
   },
   {
     "text": "LifeScape",
@@ -37,6 +51,21 @@
       "text": "View Repository"
     },
     "skills": ["Next.js", "Typescript", "tRPC", "TailwindCSS", "MongoDB", "Prisma"]
+  },
+
+  {
+    "text": "Personal Website V2",
+    "startdate": "May 25 2024",
+    "enddate": "Jun 3 2024",
+    "category": {
+      "tag": "Personal Project",
+      "color": "#f78888"
+    },
+    "link": {
+      "url": "https://github.com/danny-zou18/portfolio-site",
+      "text": "View Repository"
+    },
+    "skills": ["Next.js", "Typescript", "TailwindCSS"]
   },
   {
     "text": "LibreTunes - Shared Music Player",
