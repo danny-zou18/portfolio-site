@@ -15,13 +15,13 @@ export default function Home() {
       <motion.a
         href="/Danny_Zou_Resume.pdf"
         download="My_Resume.pdf"
-        className="flex flex-row items-center mt-10 p-1 px-3 border-2 border-primary text-md font-mono rounded-full"
+        className="flex flex-row items-center mt-10 p-1 px-4 border-2 border-primary text-md font-mono rounded-full"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5, duration: 1 }}
       >
-        <FaCloudDownloadAlt />
-        <span className="ml-2">resume</span>
+        <FaCloudDownloadAlt className="text-xl" />
+        <span className="ml-2 mt-1">resume</span>
       </motion.a>
       
 
