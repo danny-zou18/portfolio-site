@@ -59,7 +59,7 @@ const ContactModal: React.FC = () => {
   return (
     showModal && (
       <div
-        className={` border-2 flex flex-col bg-background md:w-[35rem] xsm:w-[24rem] md:h-[32rem] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-10 pt-5 shadow-lg rounded-md z-60`}
+        className={` border-2 flex flex-col bg-background md:w-[35rem] xsm:w-[24rem] md:h-[32rem] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-10 pt-5 shadow-lg rounded-md z-50`}
       >
         <motion.div
           className="close-button absolute top-3 right-3 text-2xl rounded-full p-[0.1rem] cursor-pointer"
