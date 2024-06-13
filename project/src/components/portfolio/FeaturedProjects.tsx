@@ -196,7 +196,7 @@ const FeaturedProjects: React.FC = () => {
       <AnimatePresence>
         {selectedId && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10"
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -205,7 +205,7 @@ const FeaturedProjects: React.FC = () => {
               (project) =>
                 project.id === selectedId && (
                   <motion.div
-                    className="bg-card rounded-lg p-6 pb-2 shadow-md mx-auto lg:w-[70rem] lg:h-[30rem] xsm:w-[28rem] overflow-y-auto z-10"
+                    className="bg-card rounded-lg p-6 pb-2 shadow-md mx-auto lg:w-[70rem] lg:h-[30rem] xsm:w-[28rem] overflow-y-auto z-50"
                     layoutId={`card-container-${project.id}`}
                     key={project.id}
                     initial={{ scale: 0.8, opacity: 0 }}

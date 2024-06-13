@@ -9,7 +9,7 @@ const Overlay: React.FC = () => {
 
   return (
     contactModal.isOpen && (
-      <div className="fixed inset-0 bg-black opacity-50 z-20" onClick={() => contactModal.onClose()}>
+      <div className="fixed inset-0 bg-black opacity-50 z-50" onClick={() => contactModal.onClose()}>
         
       </div>
     )
