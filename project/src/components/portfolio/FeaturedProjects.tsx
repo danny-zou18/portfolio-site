@@ -154,14 +154,14 @@ const FeaturedProjects: React.FC = () => {
                 </motion.div>
               </motion.div>
 
-              <motion.div className="flex h-48 ">
+              <motion.div className="flex h-56 ">
                 <motion.div className="border-0 w-[100%] overflow-hidden rounded-lg mr-2 relative z-0">
                   {project.images.map((src, index) => (
                     <Image
                       key={index}
                       src={src}
                       alt={`Stacked image ${index}`}
-                      className={`absolute lg:w-72 h-44 md:w-96 rounded-lg transition-transform translate-x-2 translate-y-0 duration-300 ease-in-out object-cover`}
+                      className={`absolute lg:w-80 h-52 md:w-96 rounded-lg transition-transform translate-x-2 translate-y-0 duration-300 ease-in-out object-cover`}
                       style={{
                         top: `${index * 5}px`,
                         left: `${index * 10}px`,
@@ -172,23 +172,11 @@ const FeaturedProjects: React.FC = () => {
                     />
                   ))}
                 </motion.div>
-                <motion.h5 className="text-sm w-[70%] font-[400] mb-1 text-background pr-2">
+                <motion.h5 className="text-sm w-[55%] font-[400] mb-1 text-background pr-2">
                   {project.brief_description}
                 </motion.h5>
               </motion.div>
-              <motion.div className="flex flex-row flex-wrap gap-2 mt-3 ">
-                {project.skills.slice(0, 3).map((skill, index) => (
-                  <div
-                    key={index}
-                    className="card p-2 pl-3 pr-3 bg-background rounded-[10px] font-[600] shadow-md cursor-pointer text-sm"
-                  >
-                    <h5>{skill}</h5>
-                  </div>
-                ))}
-                <div className="card bg-background rounded-[10px] shadow-md cursor-pointer pl-3 pr-3">
-                  . . .
-                </div>
-              </motion.div>
+              
             </div>
           </motion.div>
         ))}
