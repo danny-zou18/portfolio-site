@@ -9,6 +9,7 @@ import Image from "next/image";
 import useContactModal from "@/hooks/useContactModal";
 import ContactModal from "./ContactModal";
 import ToggleDarkLightMode from "./ToggleDarkLightMode";
+import WhichImage from "./WhichImage";
 
 import { FaLinkedin, FaGithub, FaGitlab } from "react-icons/fa";
 import { SiDevpost } from "react-icons/si";
@@ -56,14 +57,6 @@ const Navbar: React.FC = () => {
     contactModal.onOpen();
   }, [contactModal]);
 
-  useEffect(() => {
-    setTheme("dark");
-  },[])
-
-  const dark = theme === "dark";
-
-
-
   return (
     <div className="flex bg-background md:flex-row xsm:flex-col justify-between items-center py-2 w-[80%] ml-auto mr-auto pt-2 fixed top-0 left-1/2 transform -translate-x-1/2 z-40 ">
       <div className="flex flex-row  ">
@@ -95,25 +88,7 @@ const Navbar: React.FC = () => {
             <SiDevpost />
           </a>
         </div>
-        {dark ? (
-          <Image
-            src="/image (2).png"
-            alt="Me"
-            width={50}
-            height={50}
-            className="object-fit w-[50px] h-[50px] ml-2 mr-2 overflow-hidden p-2"
-            style={{ objectPosition: "center" }} // Adjust as needed: 'top', 'bottom', etc.
-          />
-        ) : (
-          <Image
-            src="/icon.png"
-            alt="Me"
-            width={50}
-            height={50}
-            className="object-fit w-[50px] h-[50px] ml-2 mr-2 overflow-hidden p-2"
-            style={{ objectPosition: "center" }} // Adjust as needed: 'top', 'bottom', etc.
-          />
-        )}
+        <WhichImage />
 
         <div className="flex text-xl gap-2">
           <a

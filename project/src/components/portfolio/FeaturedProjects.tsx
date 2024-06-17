@@ -51,7 +51,6 @@ const featuredProjects: featuredProjectType[] = [
       "Leptos",
       "CSS",
       "PostgreSQL",
-      "RSC APIs",
       "Docker",
       "Redis",
     ],
@@ -113,9 +112,7 @@ const featuredProjects: featuredProjectType[] = [
       "Prompt Engineering",
       "DevSecOps",
       "Gitlab",
-      "CI/CD",
       "Docker",
-      "APIs",
     ],
     images: [
       "/devman/1.jpg",
@@ -196,12 +193,12 @@ const FeaturedProjects: React.FC = () => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 flex justify-center items-center z-50"
           >
-            <motion.div className="fixed inset-0 bg-black bg-opacity-50" onClick={() => setSelectedId("")}></motion.div>
+            <motion.div className="fixed inset-0 bg-black bg-opacity-50 z-60" onClick={() => setSelectedId("")}></motion.div>
             {featuredProjects.map(
               (project) =>
                 project.id === selectedId && (
                   <motion.div
-                    className="bg-card rounded-lg p-6 pb-2 shadow-md mx-auto lg:w-[70rem] lg:h-[30rem] xsm:w-[28rem] overflow-y-auto"
+                    className="bg-card rounded-lg p-6 pb-2 shadow-md mx-auto lg:w-[70rem] lg:h-[30rem] xsm:w-[28rem] overflow-y-auto z-100 relative"
                     layoutId={`card-container-${project.id}`}
                     key={project.id}
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -304,11 +301,11 @@ const FeaturedProjects: React.FC = () => {
                           </motion.h5>
                         </motion.div>
                       </motion.div>
-                      <motion.div className="flex flex-wrap gap-2 lg:mt-4 xsm:mt-[-2rem] ">
+                      <motion.div className="flex flex-wrap gap-2 lg:mt-5 xsm:mt-[-2rem] ">
                         {project.skills.map((skill, index) => (
                           <div
                             key={index}
-                            className="card p-2 pl-3 pr-3 bg-background rounded-[10px] font-[600] shadow-md cursor-pointer text-[.9rem]"
+                            className="card px-4 py-1 bg-background rounded-full font-[300] shadow-md cursor-pointer text-[.9rem]"
                           >
                             <h5>{skill}</h5>
                           </div>
