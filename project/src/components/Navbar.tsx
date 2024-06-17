@@ -13,6 +13,8 @@ import ToggleDarkLightMode from "./ToggleDarkLightMode";
 import { FaLinkedin, FaGithub, FaGitlab } from "react-icons/fa";
 import { SiDevpost } from "react-icons/si";
 
+import { useTheme } from "next-themes";
+
 interface NavBtnProp {
   href: string;
   whereto: string;
@@ -46,11 +48,15 @@ const NavBtn: React.FC<NavBtnProp> = ({ href, whereto }) => {
 };
 
 const Navbar: React.FC = () => {
+  const { theme, setTheme } = useTheme();
+
   const contactModal = useContactModal();
 
   const openContact = useCallback(() => {
     contactModal.onOpen();
   }, [contactModal]);
+
+  const dark = theme === "dark";
 
   return (
     <div className="flex bg-background md:flex-row xsm:flex-col justify-between items-center py-2 w-[80%] ml-auto mr-auto pt-2 fixed top-0 left-1/2 transform -translate-x-1/2 z-40 ">
@@ -83,14 +89,26 @@ const Navbar: React.FC = () => {
             <SiDevpost />
           </a>
         </div>
-        <Image
-          src="/face.jpg"
-          alt="Me"
-          width={50}
-          height={50}
-          className="object-cover w-[50px] h-[50px] rounded-full ml-2 mr-2 overflow-hidden"
-          style={{ objectPosition: "center" }} // Adjust as needed: 'top', 'bottom', etc.
-        />
+        {dark ? (
+          <Image
+            src="/image (2).png"
+            alt="Me"
+            width={50}
+            height={50}
+            className="object-fit w-[50px] h-[50px] ml-2 mr-2 overflow-hidden p-2"
+            style={{ objectPosition: "center" }} // Adjust as needed: 'top', 'bottom', etc.
+          />
+        ) : (
+          <Image
+            src="/icon.png"
+            alt="Me"
+            width={50}
+            height={50}
+            className="object-fit w-[50px] h-[50px] ml-2 mr-2 overflow-hidden p-2"
+            style={{ objectPosition: "center" }} // Adjust as needed: 'top', 'bottom', etc.
+          />
+        )}
+
         <div className="flex text-xl gap-2">
           <a
             href="https://github.com/danny-zou18"
@@ -113,7 +131,7 @@ const Navbar: React.FC = () => {
       <div className="flex flex-row items-center md:mt-0 xsm:mt-3">
         <ToggleDarkLightMode />
         <button
-          className="p-3 rounded-lg bg-primary text-secondary hover: hover:text-primary hover:bg-secondary ml-5 transition-all duration-300"
+          className="p-3  bg-primary text-secondary hover: hover:text-primary hover:bg-secondary ml-5 transition-all duration-300"
           onClick={openContact}
         >
           Contact Me

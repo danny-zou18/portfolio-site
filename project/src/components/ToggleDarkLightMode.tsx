@@ -28,12 +28,12 @@ const ToggleDarkLightMode: React.FC = () => {
       onClick={() => {
         setTheme(`${dark ? "light" : "dark"}`);
       }}
-      className="mr-5"
+      className="mr-5 bg-transparent hover:bg-transparent"
     >
       {dark ? (
-        <Sun className="text-background hover:cursor-pointer hover:text-foreground" />
+        <Sun className="text-primary hover:cursor-pointer hover:text-muted-foreground" />
       ) : (
-        <Moon className="text-background hover:cursor-pointer hover:text-foreground" />
+        <Moon className="text-primary hover:cursor-pointer hover:text-foreground" />
       )}
     </Button>
   );
