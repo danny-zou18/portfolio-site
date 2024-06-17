@@ -46,7 +46,15 @@ const featuredProjects: featuredProjectType[] = [
       "LibreTunes is a self-hosted music player designed to make listening a more social experience. LibreTunes includes features like shared playlists, viewing friends` activity and listening along, a shared queue, and more. LibreTunes is the music equivalent of self-hosted movie and TV show platforms like Jellyfin, Plex, Kodi, and others. It is designed for users to run their own server and provide their own audio files for playing. Users can upload new music through the web interface or import an existing library.",
     how_built:
       'LibreTunes is built (almost) entirely in Rust using the Leptos web framework. Leptos provides easy ways to write "Server Functions" that make up our API, and serializes/deserilizes data when calling these functions. Our frontend code is compiled to WebAssembly for a highly response UI. Client-side routing also makes our site incredibly fast. We also use Axum webserver and axum-login for login, authentication, and user sessions. User data is stored in PostgreSQL and login session tokens are stored in Redis.',
-    skills: ["Rust", "Leptos", "CSS", "PostgreSQL", "RSC APIs", "Docker", "Redis"],
+    skills: [
+      "Rust",
+      "Leptos",
+      "CSS",
+      "PostgreSQL",
+      "RSC APIs",
+      "Docker",
+      "Redis",
+    ],
     images: [
       "/libretunes/libre4.png",
       "/libretunes/libre3.png",
@@ -134,8 +142,8 @@ const FeaturedProjects: React.FC = () => {
             key={project.id}
             initial={{ scale: 1, opacity: 0 }}
             animate={{ scale: selectedId === project.id ? 1.1 : 1 }} // Increase scale on selected card
-            whileInView={{opacity: 1}}
-            transition={{ duration: .3 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             <div className="card-content">
@@ -176,7 +184,6 @@ const FeaturedProjects: React.FC = () => {
                   {project.brief_description}
                 </motion.h5>
               </motion.div>
-              
             </div>
           </motion.div>
         ))}
@@ -184,16 +191,17 @@ const FeaturedProjects: React.FC = () => {
       <AnimatePresence>
         {selectedId && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            className="fixed inset-0 flex justify-center items-center z-50"
           >
+            <motion.div className="fixed inset-0 bg-black bg-opacity-50" onClick={() => setSelectedId("")}></motion.div>
             {featuredProjects.map(
               (project) =>
                 project.id === selectedId && (
                   <motion.div
-                    className="bg-card rounded-lg p-6 pb-2 shadow-md mx-auto lg:w-[70rem] lg:h-[30rem] xsm:w-[28rem] overflow-y-auto z-50"
+                    className="bg-card rounded-lg p-6 pb-2 shadow-md mx-auto lg:w-[70rem] lg:h-[30rem] xsm:w-[28rem] overflow-y-auto"
                     layoutId={`card-container-${project.id}`}
                     key={project.id}
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -316,6 +324,5 @@ const FeaturedProjects: React.FC = () => {
     </motion.div>
   );
 };
-
 
 export default FeaturedProjects;

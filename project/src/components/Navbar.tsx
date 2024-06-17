@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -56,7 +56,13 @@ const Navbar: React.FC = () => {
     contactModal.onOpen();
   }, [contactModal]);
 
+  useEffect(() => {
+    setTheme("dark");
+  },[])
+
   const dark = theme === "dark";
+
+
 
   return (
     <div className="flex bg-background md:flex-row xsm:flex-col justify-between items-center py-2 w-[80%] ml-auto mr-auto pt-2 fixed top-0 left-1/2 transform -translate-x-1/2 z-40 ">
