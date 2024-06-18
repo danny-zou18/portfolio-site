@@ -58,11 +58,12 @@ const Navbar: React.FC = () => {
   }, [contactModal]);
 
   return (
-    <div className="flex bg-background md:flex-row xsm:flex-col justify-between items-center py-2 w-[80%] ml-auto mr-auto pt-2 fixed top-0 left-1/2 transform -translate-x-1/2 z-40 ">
+    <div className="flex bg-background md:flex-row xsm:flex-col justify-between items-center py-2 md:w-[80%] xsm:w-full ml-auto mr-auto pt-2 fixed top-0 left-1/2 transform -translate-x-1/2 z-40 ">
       <div className="flex flex-row  ">
         <NavBtn href="/" whereto="Home" />
         <NavBtn href="/portfolio" whereto="Portfolio" />
         <NavBtn href="/about" whereto="About" />
+        <NavBtn href="/aboutdup" whereto="About" />
       </div>
       <motion.div
         initial={{ opacity: 0 }}
