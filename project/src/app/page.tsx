@@ -1,7 +1,5 @@
 "use client";
 
-import TextAnimation from "@/components/home/TextAnimation";
-
 import { FaCloudDownloadAlt } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
 
