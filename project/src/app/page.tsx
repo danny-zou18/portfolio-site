@@ -24,7 +24,7 @@ export default function Home() {
           opacity: { duration: 0.5 },
         }}
       >
-        Welcome, I'm Danny.
+        Welcome, I&apos;m Danny.
       </motion.h1>
       <motion.a
         href="/Danny_Zou_Resume.pdf"
