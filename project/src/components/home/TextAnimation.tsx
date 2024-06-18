@@ -14,7 +14,7 @@ const TextAnimation: React.FC<TextAnimationProps> = ({ text }) => {
   return (
     <div className="flex">
       <h1
-        className="relative  font-mono
+        className="relative
         before:absolute before:inset-0 before:animate-typewriter
         before:bg-background
         after:absolute after:inset-0 after:w-[0.125em] after:animate-caret
