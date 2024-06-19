@@ -13,6 +13,7 @@ interface experiencesProp {
   description: string;
   startDate: string;
   endDate: string;
+  skills: string[];
 }
 
 const experiences = [
@@ -22,9 +23,10 @@ const experiences = [
     type: "Professionional Experience",
     type2: "Part Time Paid",
     description:
-      "Worked with RPI Union Developer Team to develop and maintain RPI websites.",
+      "Currently 1 of 4 students working to build and maintain critical web applications for Rensselaer Polytechnic Institute(My University). Working closely with cross-functional teams, including developers, designers, and managers, to implement and advocate for best practices in web development. ",
     startDate: "MAY 2024",
     endDate: "PRESENT",
+    skills: ["React", "Postgresql", "Django", "Linux", "Docker"],
   },
   {
     title: "Mobile Developer and Leader",
@@ -35,6 +37,14 @@ const experiences = [
       "Leading LifeScape Developer Team of 6 to develop LifeScape mobile application.",
     startDate: "MAY 2024",
     endDate: "PRESENT",
+    skills: [
+      "React-Native",
+      "Typescript",
+      "Nativewind",
+      "PostgreSQL",
+      "Firebase",
+      "Docker",
+    ],
   },
   {
     title: "Full Stack Developer",
@@ -45,6 +55,7 @@ const experiences = [
       "Worked with LibreTunes Developer Team of 4 to develop and maintain LibreTune website.",
     startDate: "JAN 2024",
     endDate: "PRESENT",
+    skills: ["Rust", "Leptos", "CSS", "PostgreSQL", "Docker", "Redis"],
   },
   {
     title: "Full Stack Developer",
@@ -55,15 +66,25 @@ const experiences = [
       "Worked with FinVis Developer Team of 8 to develop and maintain FinVis website.",
     startDate: "SEP 2023",
     endDate: "DEC 2023",
+    skills: [
+      "Next.js",
+      "Typescript",
+      "tRPC",
+      "NextAuth.js",
+      "MongoDB",
+      "TailwindCSS",
+    ],
   },
 ];
 
 const Experiences: React.FC = () => {
-  return <motion.div className="w-full p-2 ">
-    {experiences.map((experience, index) => (
-      <Experience key={index} data={experience} />
-    ))}
-  </motion.div>;
+  return (
+    <motion.div className="w-full ">
+      {experiences.map((experience, index) => (
+        <Experience key={index} data={experience} />
+      ))}
+    </motion.div>
+  );
 };
 
 export default Experiences;
@@ -77,6 +98,7 @@ interface ExperienceCardProps {
     description: string;
     startDate: string;
     endDate: string;
+    skills: string[];
   };
 }
 
@@ -86,14 +108,26 @@ const Experience: React.FC<ExperienceCardProps> = ({ data }) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="w-full flex flex-row justify-between"
+      className="w-full flex flex-row justify-between rounded-lg cursor-pointer p-2 hover:bg-[#00000060] "
     >
       <div className="text-xs text-text font-bold mx-2 pt-1 ">
         {data.startDate} - {data.endDate}
       </div>
       <div className=" flex flex-col w-[70%] mb-2">
-        <h1 className="font-[500] text-neutral-300">{data.title} · {data.at}</h1>
-        <h3>{data.description}</h3>
+        <h1 className="font-[500] text-neutral-300">
+          {data.title} · {data.at}
+        </h1>
+        <h3 className="text-sm mt-2 text-neutral-400">{data.description}</h3>
+        <div className="flex flex-wrap gap-2 my-3">
+          {data.skills.map((skill, index) => (
+            <div
+              key={index}
+              className="px-4 py-1 bg-card rounded-full font-[400] shadow-md cursor-pointer text-[.8rem] text-background"
+            >
+              <h5>{skill}</h5>
+            </div>
+          ))}
+        </div>
       </div>
     </motion.div>
   );
