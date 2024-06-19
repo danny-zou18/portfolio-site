@@ -134,7 +134,8 @@ const Experience: React.FC<ExperienceCardProps> = ({ data }) => {
         </h1>
         <h3 className="text-sm mt-2 text-neutral-400">{data.description}</h3>
         <div className="flex flex-wrap gap-2 mt-3 mb-2">
-          {data.skills.length > 0 && data.skills.map((skill: string, index: number) => (
+          
+          {data.skills.map((skill, index) => (
             <div
               key={index}
               className="px-4 py-1 bg-card rounded-full font-[400] shadow-md cursor-pointer text-[.8rem] text-background"
@@ -142,7 +143,6 @@ const Experience: React.FC<ExperienceCardProps> = ({ data }) => {
               <h5>{skill}</h5>
             </div>
           ))}
-          
         </div>
       </div>
     </motion.div>
