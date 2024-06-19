@@ -58,7 +58,14 @@ const config = {
         },
         experiencehover: {
           DEFAULT: "var(--experience-hover)",
-        }
+        },
+        experiencetitle: {
+          DEFAULT: "var(--experience-title)",
+        },
+        experiencedescription: {
+          DEFAULT: "var(--experience-description)",
+        },
+        
       },
       borderRadius: {
         lg: "var(--radius)",

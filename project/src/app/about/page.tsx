@@ -5,6 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 import { motion } from "framer-motion";
 import Experiences from "@/components/about/Experiences";
+import Skills from "@/components/about/Skills";
 
 const AboutPage: React.FC = () => {
   const { theme } = useTheme();
@@ -24,7 +25,6 @@ const AboutPage: React.FC = () => {
       return () => container.removeEventListener("scroll", handleScroll);
     }
   }, [containerRef.current, ref1.current, ref2.current, ref3.current]);
-
 
   const dark = theme === "dark";
 
@@ -57,7 +57,6 @@ const AboutPage: React.FC = () => {
 
   return (
     <div className=" w-[80%] mx-auto pt-14 overflow-hidden md:max-h-[100vh] xsm:max-h-none">
-
       <div className="md:w-[75%] xsm:w-[100%]  mx-auto flex md:flex-row xsm:flex-col justify-between">
         <div className="md:max-w-[50%] xsm:max-w-full mt-60 ">
           <div>
@@ -89,50 +88,85 @@ const AboutPage: React.FC = () => {
           >
             <div className="flex flex-row items-center gap-4">
               <div
-                className={`${currentDiv===1 ? "bg-card w-12":"bg-text w-5"} transition-all duration-200 ease-in-out h-[.06rem] `}
+                className={`${
+                  currentDiv === 1 ? "bg-card w-12" : "bg-text w-5"
+                } transition-all duration-200 ease-in-out h-[.06rem] `}
               ></div>
-              <h1 className={`text-sm font-[600] ${currentDiv===1 ? "text-card": ""}`}>EXPERIENCE</h1>
+              <h1
+                className={`text-sm font-[600] ${
+                  currentDiv === 1 ? "text-card" : ""
+                }`}
+              >
+                EXPERIENCE
+              </h1>
             </div>
             <div className="flex flex-row items-center gap-4">
-              <div className={`${currentDiv===2 ? "bg-card w-12":"bg-text w-5"} transition-all duration-200 ease-in-out h-[.06rem]`}></div>
-              <h1 className={`text-sm font-[600] ${currentDiv===2 ? "text-card": ""}`}>SKILLS</h1>
+              <div
+                className={`${
+                  currentDiv === 2 ? "bg-card w-12" : "bg-text w-5"
+                } transition-all duration-200 ease-in-out h-[.06rem]`}
+              ></div>
+              <h1
+                className={`text-sm font-[600] ${
+                  currentDiv === 2 ? "text-card" : ""
+                }`}
+              >
+                SKILLS
+              </h1>
             </div>
             <div className="flex flex-row items-center gap-4">
-              <div className={`${currentDiv===3 ? "bg-card w-12":"bg-text w-5"} transition-all duration-200 ease-in-out h-[.06rem]`}></div>
-              <h1 className={`text-sm font-[600] ${currentDiv===3 ? "text-card": ""}`}>ABOUT</h1>
+              <div
+                className={`${
+                  currentDiv === 3 ? "bg-card w-12" : "bg-text w-5"
+                } transition-all duration-200 ease-in-out h-[.06rem]`}
+              ></div>
+              <h1
+                className={`text-sm font-[600] ${
+                  currentDiv === 3 ? "text-card" : ""
+                }`}
+              >
+                ABOUT
+              </h1>
             </div>
           </div>
         </div>
         <div
-          style={{"scrollbarWidth": "none", "msOverflowStyle": "none"}}
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           ref={containerRef}
           className=" overflow-auto md:max-h-[100vh] xsm:max-h-none md:w-[45%] xsm:w-full md:mt-20 xsm:mt-0 "
-          
         >
-          <div >
-            <motion.div
-              ref={ref1}
-              
-            >
+          <div>
+            <motion.div ref={ref1}>
               <Experiences />
             </motion.div>
             <motion.div
               ref={ref2}
               style={{
                 height: "100vh",
-                background: currentDiv === 2 ? "lightcoral" : "gray",
               }}
+              className="mt-16"
             >
-              Div 2
+              <Skills />
             </motion.div>
-            <motion.div
-              ref={ref3}
-              style={{
-                height: "101vh",
-                background: currentDiv === 3 ? "lightcoral" : "gray",
-              }}
-            >
-              Div 3
+            <motion.div ref={ref3} className="mt-20 p-2">
+              <h1 className="text-experiencetitle">
+                Back in 2021, I received an acceptance letter from Rensselaer
+                Polytechnic Institute (RPI), and my excitement was through the
+                roof. However, I was faced with the difficult decision of
+                choosing a major, a choice that would shape my future career
+                trajectory. After much deliberation, I chose Computer Science.
+                This decision propelled me into a world of coding, where I
+                immersed myself daily in programming, worked for the school, and
+                contributed to numerous open-source projects. Each experience
+                has been incredibly rewarding and cool. As a web developer for
+                RPI, I build and maintain critical applications that students
+                use daily. I focus on creating interfaces that are not only
+                functional but also visually appealing and pixel-perfect.
+                Ensuring everything looks crisp and feels right is a priority in
+                my work. When I'm not at the computer, you'll find me working
+                out, rock climbing, running, or hanging out with friends, often
+                doing missions in various games.
+              </h1>
             </motion.div>
           </div>
         </div>

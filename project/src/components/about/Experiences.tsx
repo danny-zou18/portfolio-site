@@ -129,10 +129,10 @@ const Experience: React.FC<ExperienceCardProps> = ({ data }) => {
         <h1 className="mt-2 font-normal">{data.type2}</h1>
       </div>
       <div className=" flex flex-col w-[70%] mb-2">
-        <h1 className="font-[500] text-neutral-300">
+        <h1 className="font-[500] text-experiencetitle">
           {data.title} · {data.at}
         </h1>
-        <h3 className="text-sm mt-2 text-neutral-400">{data.description}</h3>
+        <h3 className="text-sm mt-2 text-experiencedescription">{data.description}</h3>
         <div className="flex flex-wrap gap-2 mt-3 mb-2">
           
           {data.skills.map((skill, index) => (
