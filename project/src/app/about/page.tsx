@@ -137,12 +137,17 @@ const AboutPage: React.FC = () => {
         >
           <div>
             <motion.div ref={ref1}>
+              <h1 className="text-experiencetitle mb-16 lg:hidden xsm:flex w-full font-bold text-xl justify-center">EXPERIENCE</h1>
               <Experiences />
             </motion.div>
             <motion.div ref={ref2} style={{}} className="mt-28">
+            <h1 className="text-experiencetitle mb-16 lg:hidden xsm:flex w-full font-bold text-xl justify-center">SKILLS</h1>
+
               <Skills />
             </motion.div>
             <motion.div ref={ref3} className="mt-32 p-2">
+            <h1 className="text-experiencetitle mb-16 lg:hidden xsm:flex w-full font-bold text-xl justify-center ">ABOUT</h1>
+
               <h1 className="text-experiencetitle">
                 Back in 2021, I received an acceptance letter from Rensselaer
                 Polytechnic Institute (RPI), and my excitement was through the
