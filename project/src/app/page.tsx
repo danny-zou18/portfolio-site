@@ -10,6 +10,7 @@ import { motion, Variants } from "framer-motion";
 export default function Home() {
   return (
     <main className="flex flex-col justify-center items-center overflow-hidden w-[80%] h-[80vh] mt-20 ml-auto mr-auto  p-10 ">
+      <head><title>Home</title></head>
       <motion.h1
         className="text-5xl"
         initial={{ y: "100vh", opacity: 0 }}

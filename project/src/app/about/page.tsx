@@ -57,6 +57,9 @@ const AboutPage: React.FC = () => {
 
   return (
     <div className=" w-[80%] mx-auto pt-14 overflow-hidden lg:max-h-[100vh] xsm:max-h-none">
+      <head>
+        <title>About</title>
+      </head>
       <div className="lg:w-[75%] xsm:w-[100%]  mx-auto flex lg:flex-row xsm:flex-col justify-between">
         <div className="lg:max-w-[50%] xsm:max-w-full mt-60 ">
           <div>
@@ -137,16 +140,22 @@ const AboutPage: React.FC = () => {
         >
           <div>
             <motion.div ref={ref1}>
-              <h1 className="text-experiencetitle mb-16 lg:hidden xsm:flex w-full font-bold text-xl justify-center">EXPERIENCE</h1>
+              <h1 className="text-experiencetitle mb-16 lg:hidden xsm:flex w-full font-bold text-xl justify-center">
+                EXPERIENCE
+              </h1>
               <Experiences />
             </motion.div>
             <motion.div ref={ref2} style={{}} className="mt-28">
-            <h1 className="text-experiencetitle mb-16 lg:hidden xsm:flex w-full font-bold text-xl justify-center">SKILLS</h1>
+              <h1 className="text-experiencetitle mb-16 lg:hidden xsm:flex w-full font-bold text-xl justify-center">
+                SKILLS
+              </h1>
 
               <Skills />
             </motion.div>
             <motion.div ref={ref3} className="mt-32 p-2">
-            <h1 className="text-experiencetitle mb-16 lg:hidden xsm:flex w-full font-bold text-xl justify-center ">ABOUT</h1>
+              <h1 className="text-experiencetitle mb-16 lg:hidden xsm:flex w-full font-bold text-xl justify-center ">
+                ABOUT
+              </h1>
 
               <h1 className="text-experiencetitle">
                 Back in 2021, I received an acceptance letter from Rensselaer
