@@ -2,14 +2,12 @@
 
 import { useTheme } from "next-themes";
 import React, { useState, useEffect, useRef } from "react";
-import { Button } from "@/components/ui/button";
 
 import { motion } from "framer-motion";
 import Experiences from "@/components/about/Experiences";
 
 const AboutPage: React.FC = () => {
   const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const [currentDiv, setCurrentDiv] = useState<number | null>(1);
 
   const containerRef = useRef<HTMLInputElement>(null);
@@ -18,7 +16,6 @@ const AboutPage: React.FC = () => {
   const ref3 = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => updateScrollPositions();
     const container = containerRef.current;
     if (container) {
@@ -28,8 +25,6 @@ const AboutPage: React.FC = () => {
     }
   }, [containerRef.current, ref1.current, ref2.current, ref3.current]);
 
-  if (!mounted)
-    return <Button variant="secondary" size="icon" disabled={true}></Button>;
 
   const dark = theme === "dark";
 
@@ -96,15 +91,15 @@ const AboutPage: React.FC = () => {
               <div
                 className={`${currentDiv===1 ? "bg-card w-12":"bg-text w-5"} transition-all duration-200 ease-in-out h-[.06rem] `}
               ></div>
-              <h1 className="text-sm font-[600] text-card">EXPERIENCE</h1>
+              <h1 className={`text-sm font-[600] ${currentDiv===1 ? "text-card": ""}`}>EXPERIENCE</h1>
             </div>
             <div className="flex flex-row items-center gap-4">
               <div className={`${currentDiv===2 ? "bg-card w-12":"bg-text w-5"} transition-all duration-200 ease-in-out h-[.06rem]`}></div>
-              <h1 className="text-sm font-[600]">SKILLS</h1>
+              <h1 className={`text-sm font-[600] ${currentDiv===2 ? "text-card": ""}`}>SKILLS</h1>
             </div>
             <div className="flex flex-row items-center gap-4">
               <div className={`${currentDiv===3 ? "bg-card w-12":"bg-text w-5"} transition-all duration-200 ease-in-out h-[.06rem]`}></div>
-              <h1 className="text-sm font-[600]">ABOUT</h1>
+              <h1 className={`text-sm font-[600] ${currentDiv===3 ? "text-card": ""}`}>ABOUT</h1>
             </div>
           </div>
         </div>

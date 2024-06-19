@@ -81,7 +81,7 @@ const experiences = [
     type: "Teaching Assistant",
     type2: "Part Time Paid",
     description:
-      "Worked with FinVis Developer Team of 8 to develop and maintain FinVis website. Taught inexperienced team members fundamentals of Web Development, Git, and Docker. Gave code reviews, pull requests reviews, and provided feedback to team members.",
+      "Demonstrated strong communication and interpersonal skills in assisting students from diverse backgrounds. Instructed students in the proficient utilization of diverse machinery, imparting practical skills and fostering a comprehensive understanding of technical processes. Mentored students in conceptualizing and crafting innovative projects, fostering their creativity and hands-on problem-solving skills.",
     startDate: "AUG 2022",
     endDate: "MAY 2024",
     skills: [
@@ -134,7 +134,7 @@ const Experience: React.FC<ExperienceCardProps> = ({ data }) => {
         </h1>
         <h3 className="text-sm mt-2 text-neutral-400">{data.description}</h3>
         <div className="flex flex-wrap gap-2 mt-3 mb-2">
-          {data.skills.map((skill, index) => (
+          {data.skills.length > 0 && data.skills.map((skill: string, index: number) => (
             <div
               key={index}
               className="px-4 py-1 bg-card rounded-full font-[400] shadow-md cursor-pointer text-[.8rem] text-background"
@@ -142,6 +142,7 @@ const Experience: React.FC<ExperienceCardProps> = ({ data }) => {
               <h5>{skill}</h5>
             </div>
           ))}
+          
         </div>
       </div>
     </motion.div>
