@@ -79,7 +79,7 @@
       "url": "https://gitlab.mregirouard.com/libretunes/",
       "text": "View Repository"
     },
-    "skills": ["Rust", "Leptos","CSS", "PostgreSQL","RSC APIs","Docker", "Redis"]
+    "skills": ["Rust", "Leptos","CSS", "PostgreSQL","Docker", "Redis"]
   },
   {
     "text": "DevMan - Merge Analysis Tool & Pipeline",
@@ -93,7 +93,7 @@
       "url": "https://devpost.com/software/devman-m3exp6",
       "text": "View Project"
     },
-    "skills": ["Python", "AI", "llama.cpp", "Gitlab API", "Docker", "CI/CD"]
+    "skills": ["Python", "llama.cpp", "Docker", "CI/CD"]
   },
   {
     "text": "PhoneIO - AI Conversation App",
@@ -107,7 +107,7 @@
       "url": "https://devpost.com/software/phonio",
       "text": "View Project"
     },
-    "skills": ["Python", "AI", "llama.cpp", "whisper", "google-voice"]
+    "skills": ["Python", "llama.cpp", "whisper", "google-voice"]
   },
   {
     "text": "Principles of Software - CSCI 2600 at RPI",
@@ -173,7 +173,7 @@
       "url": "https://gitlab.mregirouard.com/finvis",
       "text": "View Repository"
     },
-    "skills": ["Next.js","Typescript","tRPC","NextAuth.js","MongoDB","Mongoose ORM","TailwindCSS"]
+    "skills": ["Next.js","Typescript","tRPC","NextAuth.js","MongoDB","TailwindCSS"]
   },
   {
     "text": "Personal Website V1",

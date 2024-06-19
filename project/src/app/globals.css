@@ -2,13 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
-    --card: 240 24% 16%;
+    --card: 240 10% 7%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
@@ -26,6 +27,11 @@
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
+    --text: 0 0% 66%;
+    --experience-title: #52525b;
+    --experience-description: #6b7280;
+    --experience-hover: #00000025;
+
   }
 
   .dark {
@@ -40,7 +46,7 @@
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted-foreground: 0 0% 60%;
     --accent: 0, 0%, 65%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
@@ -48,6 +54,11 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
+    --text: 220 9% 46%;
+    --experience-title: #d4d4d4;
+    --experience-description: #a3a3a3;
+    --experience-hover: #ffffff25;
+
   }
 }
 
