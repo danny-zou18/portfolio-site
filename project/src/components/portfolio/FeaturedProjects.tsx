@@ -117,7 +117,7 @@ const FeaturedProjects: React.FC = () => {
       <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-8 2xl:w-[80%] xl:w-[90%] lg:mb-0 h-[37rem]  ml-auto mr-auto">
         {featuredProjects.map((project) => (
           <motion.div
-            className={`card p-3 pr-2 bg-card rounded-lg shadow-md cursor-pointer transform transition-transform duration-500 hover:scale-105 ${
+            className={`card p-3 pr-2 bg-card rounded-lg shadow-md cursor-pointer transform transition-transform  ${
               selectedId === project.id ? "card-selected" : ""
             }`}
             layoutId={`card-container-${project.id}`}
@@ -126,8 +126,12 @@ const FeaturedProjects: React.FC = () => {
             initial={{ scale: 1, opacity: 0 }}
             animate={{ scale: selectedId === project.id ? 1.1 : 1 }} // Increase scale on selected card
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
+            transition={{
+              scale: { duration: 0.05 }, // Transition time for scale
+              opacity: { duration: 0.3 }, // Transition time for opacity
+            }}
             viewport={{ once: true }}
+            whileHover={{ scale: 1.05 }}
           >
             <div className="card-content">
               <motion.div className="flex flex-row justify-between  ">
