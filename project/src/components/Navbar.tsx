@@ -63,7 +63,6 @@ const Navbar: React.FC = () => {
         <NavBtn href="/" whereto="Home" />
         <NavBtn href="/portfolio" whereto="Portfolio" />
         <NavBtn href="/about" whereto="About" />
-        <NavBtn href="/aboutdup" whereto="About" />
       </div>
       <motion.div
         initial={{ opacity: 0 }}

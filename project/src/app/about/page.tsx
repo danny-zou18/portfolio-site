@@ -5,6 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 
 import { motion } from "framer-motion";
+import Experiences from "@/components/about/Experiences";
 
 const AboutPage: React.FC = () => {
   const { theme } = useTheme();
@@ -61,7 +62,7 @@ const AboutPage: React.FC = () => {
   return (
     <div className=" w-[80%] mx-auto pt-14 overflow-hidden md:max-h-[100vh] xsm:max-h-none">
 
-      <div className="w-[75%]  mx-auto flex md:flex-row xsm:flex-col justify-between">
+      <div className="md:w-[75%] xsm:w-[100%]  mx-auto flex md:flex-row xsm:flex-col justify-between">
         <div className="md:max-w-[50%] xsm:max-w-full mt-60 ">
           <div>
             <h1
@@ -92,16 +93,16 @@ const AboutPage: React.FC = () => {
           >
             <div className="flex flex-row items-center gap-4">
               <div
-                className={`bg-card w-12 transition-all duration-200 ease-in-out h-[.06rem] `}
+                className={`${currentDiv===1 ? "bg-card w-12":"bg-text w-5"} transition-all duration-200 ease-in-out h-[.06rem] `}
               ></div>
               <h1 className="text-sm font-[600] text-card">EXPERIENCE</h1>
             </div>
             <div className="flex flex-row items-center gap-4">
-              <div className={`bg-text w-5 h-[.06rem]`}></div>
+              <div className={`${currentDiv===2 ? "bg-card w-12":"bg-text w-5"} transition-all duration-200 ease-in-out h-[.06rem]`}></div>
               <h1 className="text-sm font-[600]">SKILLS</h1>
             </div>
             <div className="flex flex-row items-center gap-4">
-              <div className={`bg-text w-5 h-[.06rem]`}></div>
+              <div className={`${currentDiv===3 ? "bg-card w-12":"bg-text w-5"} transition-all duration-200 ease-in-out h-[.06rem]`}></div>
               <h1 className="text-sm font-[600]">ABOUT</h1>
             </div>
           </div>
@@ -109,15 +110,15 @@ const AboutPage: React.FC = () => {
         <div
           style={{"scrollbarWidth": "none", "msOverflowStyle": "none"}}
           ref={containerRef}
-          className=" overflow-auto max-h-[100vh] w-[45%] mt-20 "
+          className=" overflow-auto md:max-h-[100vh] xsm:max-h-none md:w-[45%] xsm:w-full md:mt-20 xsm:mt-0 "
           
         >
           <div >
             <motion.div
               ref={ref1}
-             
+              
             >
-              Div 1
+              <Experiences />
             </motion.div>
             <motion.div
               ref={ref2}
