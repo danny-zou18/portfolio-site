@@ -24,7 +24,7 @@ const AboutPage: React.FC = () => {
       updateScrollPositions(); // Initial call
       return () => container.removeEventListener("scroll", handleScroll);
     }
-  }, [containerRef.current, ref1.current, ref2.current, ref3.current]);
+  }, []);
 
   const dark = theme === "dark";
 
@@ -139,16 +139,10 @@ const AboutPage: React.FC = () => {
             <motion.div ref={ref1}>
               <Experiences />
             </motion.div>
-            <motion.div
-              ref={ref2}
-              style={{
-                height: "100vh",
-              }}
-              className="mt-16"
-            >
+            <motion.div ref={ref2} style={{}} className="mt-28">
               <Skills />
             </motion.div>
-            <motion.div ref={ref3} className="mt-20 p-2">
+            <motion.div ref={ref3} className="mt-32 p-2">
               <h1 className="text-experiencetitle">
                 Back in 2021, I received an acceptance letter from Rensselaer
                 Polytechnic Institute (RPI), and my excitement was through the
@@ -157,17 +151,23 @@ const AboutPage: React.FC = () => {
                 trajectory. After much deliberation, I chose Computer Science.
                 This decision propelled me into a world of coding, where I
                 immersed myself daily in programming, worked for the school, and
-                contributed to numerous open-source projects. Each experience
-                has been incredibly rewarding and cool. As a web developer for
-                RPI, I build and maintain critical applications that students
-                use daily. I focus on creating interfaces that are not only
-                functional but also visually appealing and pixel-perfect.
-                Ensuring everything looks crisp and feels right is a priority in
-                my work. When I'm not at the computer, you'll find me working
+                contributed to numerous open-source projects.
+              </h1>
+              <h1 className="text-experiencetitle mt-5">
+                Each experience has been incredibly rewarding and cool. As a web
+                developer for RPI, I build and maintain critical applications
+                that students use daily. I focus on creating interfaces that are
+                not only functional but also visually appealing and
+                pixel-perfect. Ensuring everything looks crisp and feels right
+                is a priority in my work.
+              </h1>
+              <h1 className="text-experiencetitle mt-5">
+                When I&apos;m not at the computer, you&apos;ll find me working
                 out, rock climbing, running, or hanging out with friends, often
                 doing missions in various games.
               </h1>
             </motion.div>
+            <motion.div className="min-w-[20%] min-h-[70vh]"></motion.div>
           </div>
         </div>
       </div>

@@ -2,9 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
-
-import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
+import { IoOpenOutline } from "react-icons/io5";
 
 import { IconType } from "react-icons/lib";
 
@@ -201,8 +200,27 @@ const operatingSystems: skillsProp[] = [
   },
 ];
 
-const Skills = () => {
+interface certificationsProp {
+  title: string;
+  from: string;
+  issueDate: string;
+  expireDate: string;
+  image: string;
+  url: string;
+}
 
+const certifications = [
+  {
+    title: "AWS Certified Cloud Practitioner",
+    from: "Amazon Web Services(AWS)",
+    issueDate: "May 2024",
+    expireDate: "May 2027",
+    image: "/amazon_web_services_logo.jpg",
+    url: "https://www.credly.com/badges/f74be726-95be-451f-893d-038a88943710/public_url",
+  },
+];
+
+const Skills = () => {
   return (
     <motion.div
       className="p-2"
@@ -210,39 +228,68 @@ const Skills = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
     >
-      <h1 className="text-xl text-experiencetitle text-center font-bold pb-1 border-b-2 border-b-experiencetitle">PROGRAMMING LANGUAGES</h1>
+      <h1 className="text-xl text-experiencetitle text-center font-bold pb-1 border-b-2 border-b-experiencetitle w-[80%] mx-auto">
+        CERTIFICATIONS
+      </h1>
+      <div className="mt-6 overflow-y-auto flex justify-center">
+        {certifications.map((certification, index) => (
+          <CertificationCard key={index} data={certification} />
+        ))}
+      </div>
+
+      <h1 className="text-xl text-experiencetitle text-center font-bold pb-1 border-b-2 border-b-experiencetitle mt-14">
+        PROGRAMMING LANGUAGES
+      </h1>
       <div className="mx-auto w-[70%] flex flex-row flex-wrap gap-3 justify-center mt-5">
         {programmingLanguages.map((skill, index) => (
-          <div className="px-3 py-1 bg-card rounded-full flex flex-row text-text items-center  ">
-              {skill.icon && <skill.icon className="text-2xl " />}
-              <h5 className="ml-2 ">{skill.title}</h5>
+          <div
+            className="px-3 py-1 bg-card rounded-full flex flex-row text-text items-center"
+            key={index}
+          >
+            {skill.icon && <skill.icon className="text-2xl " />}
+            <h5 className="ml-2 ">{skill.title}</h5>
           </div>
         ))}
       </div>
-      <h1 className="text-xl text-experiencetitle text-center font-bold pb-1 border-b-2 border-b-experiencetitle mt-10">FRAMEWORKS</h1>
+      <h1 className="text-xl text-experiencetitle text-center font-bold pb-1 border-b-2 border-b-experiencetitle mt-10">
+        FRAMEWORKS
+      </h1>
       <div className="mx-auto w-[70%] flex flex-row flex-wrap gap-3 justify-center mt-5">
         {frameworks.map((skill, index) => (
-          <div className="px-3 py-1 bg-card rounded-full flex flex-row text-text items-center  ">
-              {skill.icon && <skill.icon className="text-2xl " />}
-              <h5 className="ml-2 ">{skill.title}</h5>
+          <div
+            className="px-3 py-1 bg-card rounded-full flex flex-row text-text items-center"
+            key={index}
+          >
+            {skill.icon && <skill.icon className="text-2xl " />}
+            <h5 className="ml-2 ">{skill.title}</h5>
           </div>
         ))}
       </div>
-      <h1 className="text-xl text-experiencetitle text-center font-bold pb-1 border-b-2 border-b-experiencetitle mt-10">DATABASES</h1>
+      <h1 className="text-xl text-experiencetitle text-center font-bold pb-1 border-b-2 border-b-experiencetitle mt-10">
+        DATABASES
+      </h1>
       <div className="mx-auto w-[70%] flex flex-row flex-wrap gap-3 justify-center mt-5">
         {databases.map((skill, index) => (
-          <div className="px-3 py-1 bg-card rounded-full flex flex-row text-text items-center  ">
-              {skill.icon && <skill.icon className="text-2xl " />}
-              <h5 className="ml-2 ">{skill.title}</h5>
+          <div
+            className="px-3 py-1 bg-card rounded-full flex flex-row text-text items-center"
+            key={index}
+          >
+            {skill.icon && <skill.icon className="text-2xl " />}
+            <h5 className="ml-2 ">{skill.title}</h5>
           </div>
         ))}
       </div>
-      <h1 className="text-xl text-experiencetitle text-center font-bold pb-1 border-b-2 border-b-experiencetitle mt-10">TOOLS</h1>
+      <h1 className="text-xl text-experiencetitle text-center font-bold pb-1 border-b-2 border-b-experiencetitle mt-10">
+        TOOLS
+      </h1>
       <div className="mx-auto w-[70%] flex flex-row flex-wrap gap-3 justify-center mt-5">
         {tools.map((skill, index) => (
-          <div className="px-3 py-1 bg-card rounded-full flex flex-row text-text items-center  ">
-              {skill.icon && <skill.icon className="text-2xl " />}
-              <h5 className="ml-2 ">{skill.title}</h5>
+          <div
+            className="px-3 py-1 bg-card rounded-full flex flex-row text-text items-center"
+            key={index}
+          >
+            {skill.icon && <skill.icon className="text-2xl " />}
+            <h5 className="ml-2 ">{skill.title}</h5>
           </div>
         ))}
       </div>
@@ -251,3 +298,48 @@ const Skills = () => {
 };
 
 export default Skills;
+
+interface CertificationCardProps {
+  data: {
+    title: string;
+    from: string;
+    issueDate: string;
+    expireDate: string;
+    image: string;
+    url: string;
+  };
+}
+
+const CertificationCard: React.FC<CertificationCardProps> = ({ data }) => {
+  return (
+    <div className="flex flex-col">
+      <div className="flex items-center">
+        <Image
+          className="w-[55px] h-[55px]"
+          src={data.image}
+          alt="aws logo"
+          width={45}
+          height={45}
+        />
+        <div className="flex flex-col text-md ml-2">
+          <h1 className="font-bold ">{data.title}</h1>
+          <h2 className="text-xs">{data.from}</h2>
+          <div className="flex text-xs text-experiencetitle">
+            <h1>
+              Issued {data.issueDate} · Expires {data.expireDate}
+            </h1>
+          </div>
+        </div>
+      </div>
+      <span className="ml-[55px]">
+        <a
+          href={data.url}
+          target="_blank"
+          className="transition-all duration-200 border-[1px] border-background px-2 py-1 mt-1 rounded-full inline-flex items-center text-sm font-bold bg-card text-background hover:bg-background hover:text-card "
+        >
+          Show Credentials <IoOpenOutline className="ml-2 text-md" />
+        </a>
+      </span>
+    </div>
+  );
+};
