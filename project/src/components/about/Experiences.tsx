@@ -23,7 +23,7 @@ const experiences = [
     type: "Professionional Experience",
     type2: "Part Time Paid",
     description:
-      "Currently 1 of 4 students working to build and maintain critical web applications for Rensselaer Polytechnic Institute(My University). Working closely with cross-functional teams, including developers, designers, and managers, to implement and advocate for best practices in web development. ",
+      "Currently 1 of 4 students working to build and maintain critical web applications for Rensselaer Polytechnic Institute(My University). Working closely with cross-functional teams, including developers, designers, and managers, to implement and advocate for best practices in web development.\n 20 Hours/Week, Paid. ",
     startDate: "MAY 2024",
     endDate: "PRESENT",
     skills: ["React", "Postgresql", "Django", "Linux", "Docker"],
@@ -34,7 +34,7 @@ const experiences = [
     type: "Open Source Project",
     type2: "Part Time Unpaid",
     description:
-      "Leading LifeScape Developer Team of 6 to develop LifeScape mobile application.",
+      "Building, styling and designing LifeScape Open Source Mobile Application. Leading team of 6. Responsible for ensuring team members adhere to good coding practices and maintaining a high standard of code quality. Actively involved in reviewing merge requests, providing constructive feedback, and guiding the team through the development process.",
     startDate: "MAY 2024",
     endDate: "PRESENT",
     skills: [
@@ -48,22 +48,22 @@ const experiences = [
   },
   {
     title: "Full Stack Developer",
-    at: "LibreTunes",
+    at: "LibreTunes - RCOS",
     type: "Open Source Project",
     type2: "Part Time Unpaid",
     description:
-      "Worked with LibreTunes Developer Team of 4 to develop and maintain LibreTune website.",
+      "Developed and styled interactive User Interfaces for LibreTunes. Worked with a team of 4 to develop and maintain LibreTunes website. ",
     startDate: "JAN 2024",
     endDate: "PRESENT",
     skills: ["Rust", "Leptos", "CSS", "PostgreSQL", "Docker", "Redis"],
   },
   {
     title: "Full Stack Developer",
-    at: "FinVis",
+    at: "FinVis - RCOS",
     type: "Open Source Project",
     type2: "Part Time Unpaid",
     description:
-      "Worked with FinVis Developer Team of 8 to develop and maintain FinVis website.",
+      "Worked with FinVis Developer Team of 8 to develop and maintain FinVis website. Taught inexperienced team members fundamentals of Web Development, Git, and Docker. Gave code reviews, pull requests reviews, and provided feedback to team members.",
     startDate: "SEP 2023",
     endDate: "DEC 2023",
     skills: [
@@ -75,6 +75,19 @@ const experiences = [
       "TailwindCSS",
     ],
   },
+  {
+    title: "Intro to Engineering Design TA",
+    at: "Rensselaer Polytechnic Institute",
+    type: "Teaching Assistant",
+    type2: "Part Time Paid",
+    description:
+      "Worked with FinVis Developer Team of 8 to develop and maintain FinVis website. Taught inexperienced team members fundamentals of Web Development, Git, and Docker. Gave code reviews, pull requests reviews, and provided feedback to team members.",
+    startDate: "AUG 2022",
+    endDate: "MAY 2024",
+    skills: [
+      
+    ],
+  }
 ];
 
 const Experiences: React.FC = () => {
@@ -110,8 +123,10 @@ const Experience: React.FC<ExperienceCardProps> = ({ data }) => {
       viewport={{ once: true }}
       className="w-full flex flex-row justify-between rounded-lg cursor-pointer p-2 transition-all duration-200 ease-in-out hover:bg-experiencehover "
     >
-      <div className="text-xs text-text font-bold mx-2 pt-1 ">
+      <div className="text-xs text-text font-bold mx-2 pt-1 flex flex-col">
         {data.startDate} - {data.endDate}
+        <h1 className="mt-2 font-normal">{data.type}</h1>
+        <h1 className="mt-2 font-normal">{data.type2}</h1>
       </div>
       <div className=" flex flex-col w-[70%] mb-2">
         <h1 className="font-[500] text-neutral-300">

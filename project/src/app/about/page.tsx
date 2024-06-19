@@ -26,7 +26,7 @@ const AboutPage: React.FC = () => {
       updateScrollPositions(); // Initial call
       return () => container.removeEventListener("scroll", handleScroll);
     }
-  }, [containerRef.current]);
+  }, [containerRef.current, ref1.current, ref2.current, ref3.current]);
 
   if (!mounted)
     return <Button variant="secondary" size="icon" disabled={true}></Button>;
@@ -38,7 +38,6 @@ const AboutPage: React.FC = () => {
       const containerTop = containerRef.current.getBoundingClientRect().top;
       const containerBottom =
         containerRef.current.getBoundingClientRect().bottom;
-      console.log(containerTop, containerBottom);
 
       const div1Top = ref1.current.getBoundingClientRect().top;
       const div1Bottom = ref1.current.getBoundingClientRect().bottom;
@@ -46,6 +45,8 @@ const AboutPage: React.FC = () => {
       const div2Bottom = ref2.current.getBoundingClientRect().bottom;
       const div3Top = ref3.current.getBoundingClientRect().top;
       const div3Bottom = ref3.current.getBoundingClientRect().bottom;
+
+      console.log(div3Top, div3Bottom);
 
       if (div1Top < containerBottom && div1Bottom > containerTop) {
         setCurrentDiv(1);
@@ -132,7 +133,7 @@ const AboutPage: React.FC = () => {
             <motion.div
               ref={ref3}
               style={{
-                height: "100vh",
+                height: "101vh",
                 background: currentDiv === 3 ? "lightcoral" : "gray",
               }}
             >
