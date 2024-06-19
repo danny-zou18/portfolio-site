@@ -56,21 +56,21 @@ const AboutPage: React.FC = () => {
   };
 
   return (
-    <div className=" w-[80%] mx-auto pt-14 overflow-hidden md:max-h-[100vh] xsm:max-h-none">
-      <div className="md:w-[75%] xsm:w-[100%]  mx-auto flex md:flex-row xsm:flex-col justify-between">
-        <div className="md:max-w-[50%] xsm:max-w-full mt-60 ">
+    <div className=" w-[80%] mx-auto pt-14 overflow-hidden lg:max-h-[100vh] xsm:max-h-none">
+      <div className="lg:w-[75%] xsm:w-[100%]  mx-auto flex lg:flex-row xsm:flex-col justify-between">
+        <div className="lg:max-w-[50%] xsm:max-w-full mt-60 ">
           <div>
             <h1
               className={`text-5xl font-bold ${
                 dark ? "text-neutral-300" : "text-neutral-400"
-              } xsm:text-center md:text-start`}
+              } xsm:text-center lg:text-start`}
             >
               Danny Zou
             </h1>
             <h1
               className={`${
                 dark ? "text-neutral-400" : "text-neutral-500"
-              } mt-2 xsm:text-center md:text-start`}
+              } mt-2 xsm:text-center lg:text-start`}
             >
               Software Developer · Junior @{" "}
               <a
@@ -84,7 +84,7 @@ const AboutPage: React.FC = () => {
             </h1>
           </div>
           <div
-            className={`flex flex-col gap-5 mt-20 xsm:opacity-0 md:opacity-100 text-neutral-500`}
+            className={`flex flex-col gap-5 mt-20 xsm:opacity-0 lg:opacity-100 text-neutral-500`}
           >
             <div className="flex flex-row items-center gap-4">
               <div
@@ -133,7 +133,7 @@ const AboutPage: React.FC = () => {
         <div
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           ref={containerRef}
-          className=" overflow-auto md:max-h-[100vh] xsm:max-h-none md:w-[45%] xsm:w-full md:mt-20 xsm:mt-0 "
+          className=" overflow-auto lg:max-h-[100vh] xsm:max-h-none lg:w-[45%] xsm:w-full lg:mt-20 xsm:mt-0 "
         >
           <div>
             <motion.div ref={ref1}>

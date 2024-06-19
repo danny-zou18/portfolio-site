@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
   }, [contactModal]);
 
   return (
-    <div className="flex bg-background md:flex-row xsm:flex-col justify-between items-center py-2 md:w-[80%] xsm:w-full ml-auto mr-auto pt-2 fixed top-0 left-1/2 transform -translate-x-1/2 z-40 ">
+    <div className="flex bg-background lg:flex-row xsm:flex-col justify-between items-center py-2 lg:w-[80%] xsm:w-full ml-auto mr-auto pt-2 fixed top-0 left-1/2 transform -translate-x-1/2 z-40 ">
       <div className="flex flex-row  ">
         <NavBtn href="/" whereto="Home" />
         <NavBtn href="/portfolio" whereto="Portfolio" />
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.1, duration: 1 }}
-        className="flex flex-row items-center md:mt-0 xsm:mt-3 md:absolute  md:left-1/2 md:transform md:-translate-x-1/2 xsm:relative"
+        className="flex flex-row items-center lg:mt-0 xsm:mt-3 lg:absolute  lg:left-1/2 lg:transform lg:-translate-x-1/2 xsm:relative"
       >
         <div className="flex text-xl gap-2">
           <a
@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
           </a>
         </div>
       </motion.div>
-      <div className="flex flex-row items-center md:mt-0 xsm:mt-3">
+      <div className="flex flex-row items-center lg:mt-0 xsm:mt-3">
         <ToggleDarkLightMode />
         <button
           className="p-3  bg-primary text-secondary hover: hover:text-primary hover:bg-secondary ml-5 transition-all duration-300"

@@ -121,14 +121,14 @@ const Experience: React.FC<ExperienceCardProps> = ({ data }) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="w-full flex flex-row justify-between rounded-lg cursor-pointer p-2 transition-all duration-200 ease-in-out hover:bg-experiencehover "
+      className="w-full flex md:flex-row xsm:flex-col justify-between rounded-lg cursor-pointer p-2 transition-all duration-200 ease-in-out hover:bg-experiencehover "
     >
-      <div className="text-xs text-text font-bold mx-2 pt-1 flex flex-col">
+      <div className="text-xs text-text font-bold mx-2 pt-1 flex md:flex-col xsm:flex-row md:gap-0 xsm:gap-3">
         {data.startDate} - {data.endDate}
-        <h1 className="mt-2 font-normal">{data.type}</h1>
-        <h1 className="mt-2 font-normal">{data.type2}</h1>
+        <h1 className="md:mt-2 md:mb-0 xsm:mb-2 font-normal">{data.type}</h1>
+        <h1 className="md:mt-2 md:mb-0 xsm:mb-2 font-normal">{data.type2}</h1>
       </div>
-      <div className=" flex flex-col w-[70%] mb-2">
+      <div className=" flex flex-col md:w-[70%] xsm:w-full mb-2">
         <h1 className="font-[500] text-experiencetitle">
           {data.title} · {data.at}
         </h1>

@@ -7,7 +7,7 @@ import { RiArrowDownWideFill } from "react-icons/ri";
 const PortfolioPage: React.FC = () => {
   return (
     <div className="w-[80%] ml-auto mr-auto flex flex-col pt-14">
-      <div className="flex justify-center md:mt-8 xsm:mt-32 mb-12">
+      <div className="flex justify-center lg:mt-8 xsm:mt-32 mb-12">
         <h1 className="text-3xl font-[200] text-primary border-b-2 border-primary p-2">
           featured projects
         </h1>
