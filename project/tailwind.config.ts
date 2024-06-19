@@ -56,6 +56,9 @@ const config = {
           DEFAULT: "hsl(var(--text))",
           secondary: "hsl(var(--text-secondary))",
         },
+        experiencehover: {
+          DEFAULT: "var(--experience-hover)",
+        }
       },
       borderRadius: {
         lg: "var(--radius)",

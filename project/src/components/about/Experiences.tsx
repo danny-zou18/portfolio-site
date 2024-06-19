@@ -108,7 +108,7 @@ const Experience: React.FC<ExperienceCardProps> = ({ data }) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="w-full flex flex-row justify-between rounded-lg cursor-pointer p-2 hover:bg-[#00000060] "
+      className="w-full flex flex-row justify-between rounded-lg cursor-pointer p-2 transition-all duration-200 ease-in-out hover:bg-experiencehover "
     >
       <div className="text-xs text-text font-bold mx-2 pt-1 ">
         {data.startDate} - {data.endDate}
@@ -118,7 +118,7 @@ const Experience: React.FC<ExperienceCardProps> = ({ data }) => {
           {data.title} · {data.at}
         </h1>
         <h3 className="text-sm mt-2 text-neutral-400">{data.description}</h3>
-        <div className="flex flex-wrap gap-2 my-3">
+        <div className="flex flex-wrap gap-2 mt-3 mb-2">
           {data.skills.map((skill, index) => (
             <div
               key={index}
