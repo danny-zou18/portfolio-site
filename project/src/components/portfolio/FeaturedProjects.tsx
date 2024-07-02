@@ -72,9 +72,6 @@ const featuredProjects: featuredProjectType[] = [
     ],
     images: [
       "/lifescape/project_prop.jpg",
-      "/libretunes/libre3.png",
-      "/libretunes/libre2.png",
-      "/libretunes/libre1.png",
     ],
   },
   {
