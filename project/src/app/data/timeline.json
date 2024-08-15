@@ -1,6 +1,17 @@
 [
   {
-    "text": "Union Developer Project",
+    "text": "Operating Systems Simulation",
+    "startdate": "Jul 15 2024",
+    "enddate": "Aug 15 2024",
+    "category": {
+      "tag": "Class Project",
+      "color": "#6ea2f5"
+    },
+    "link": null,
+    "skills": ["C++", "Concurrency", "Synchronization", "Memory Management", "Thread Management"]
+  },
+  {
+    "text": "Club Management System - Rensselaer Union at RPI",
     "startdate": "Jun 15 2024",
     "enddate": "Present",
     "category": {
@@ -8,7 +19,7 @@
       "color": "#6ea2f5"
     },
     "link": null,
-    "skills": null
+    "skills": ["React", "Django", "Docker", "PostgreSQL", "Large Scale Development"]
   },
   {
     "text": "Discord Productivity Bot",
