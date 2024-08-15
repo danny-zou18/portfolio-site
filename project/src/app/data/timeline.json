@@ -7,7 +7,10 @@
       "tag": "Cognitive Modeling Class Project",
       "color": "#6ea2f5"
     },
-    "link": "https://github.com/danny-zou18/cog-mod-image-classification-and-convolutional-neural-networks",
+    "link": {
+      "text": "View Repository",
+      "url": "https://github.com/danny-zou18/cog-mod-image-classification-and-convolutional-neural-networks"
+    },
     "skills": ["Python", "PyTorth", "CNNs", "Image Classification", "TensorFlow", "Numpy"]
   },
   {
@@ -18,7 +21,10 @@
       "tag": "Operating Systems Class Project",
       "color": "#6ea2f5"
     },
-    "link": "https://github.com/dlin04/opsys_proj",
+    "link": {
+      "text": "View Repository",
+      "url": "https://github.com/dlin04/opsys_proj"
+    },
     "skills": ["C++", "Concurrency", "Synchronization", "Memory Management", "Thread Management"]
   },
   {
