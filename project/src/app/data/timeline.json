@@ -1,13 +1,24 @@
-[
+[ 
+  {
+    "text": "Image Classification & CNNs with Python",
+    "startdate": "Jul 15 2024",
+    "enddate": "Aug 12 2024",
+    "category": {
+      "tag": "Cognitive Modeling Class Project",
+      "color": "#6ea2f5"
+    },
+    "link": "https://github.com/danny-zou18/cog-mod-image-classification-and-convolutional-neural-networks",
+    "skills": ["Python", "PyTorth", "CNNs", "Image Classification", "TensorFlow", "Numpy"]
+  },
   {
     "text": "Operating Systems Simulation",
     "startdate": "Jul 15 2024",
     "enddate": "Aug 15 2024",
     "category": {
-      "tag": "Class Project",
+      "tag": "Operating Systems Class Project",
       "color": "#6ea2f5"
     },
-    "link": null,
+    "link": "https://github.com/dlin04/opsys_proj",
     "skills": ["C++", "Concurrency", "Synchronization", "Memory Management", "Thread Management"]
   },
   {
