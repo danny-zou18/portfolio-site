@@ -72,6 +72,12 @@ const featuredProjects: featuredProjectType[] = [
     ],
     images: [
       "/lifescape/project_prop.jpg",
+      "/lifescape/poster.png",
+      "/lifescape/signup.png",
+      "/lifescape/tasks.png",
+      "/lifescape/habits.png",
+      "/lifescape/routine.png",
+      "/lifescape/habit_creation.png",
     ],
   },
   {
