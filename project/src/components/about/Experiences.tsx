@@ -47,6 +47,17 @@ const experiences = [
     ],
   },
   {
+    title: "Open Source Community Mentor",
+    at: "Rensselaer Center for Open Source",
+    type: "Mentoring",
+    type2: "Part Time Unpaid",
+    description:
+      "Mentoring students as part of RCOS. Teaching students the fundamentals of open source contributions and all the tools necessary to contribute like Git, Docker, Node, etc. Evaluating/grading student commits, providing feedback on code quality, structure, and adherence to best practices. Conducted workshops and held on-to-group sessions to assess progress and provide targeted support.",
+    startDate: "SEP 2024",
+    endDate: "PRESENT",
+    skills: ["Git", "Docker", "Teaching", "Public Speaking", "Communication"],
+  },
+  {
     title: "Full Stack Developer",
     at: "LibreTunes - RCOS",
     type: "Open Source Project",
@@ -84,10 +95,8 @@ const experiences = [
       "Demonstrated strong communication and interpersonal skills in assisting students from diverse backgrounds. Instructed students in the proficient utilization of diverse machinery, imparting practical skills and fostering a comprehensive understanding of technical processes. Mentored students in conceptualizing and crafting innovative projects, fostering their creativity and hands-on problem-solving skills.",
     startDate: "AUG 2022",
     endDate: "MAY 2024",
-    skills: [
-      
-    ],
-  }
+    skills: [],
+  },
 ];
 
 const Experiences: React.FC = () => {
@@ -132,9 +141,10 @@ const Experience: React.FC<ExperienceCardProps> = ({ data }) => {
         <h1 className="font-[500] text-experiencetitle">
           {data.title} · {data.at}
         </h1>
-        <h3 className="text-sm mt-2 text-experiencedescription">{data.description}</h3>
+        <h3 className="text-sm mt-2 text-experiencedescription">
+          {data.description}
+        </h3>
         <div className="flex flex-wrap gap-2 mt-3 mb-2">
-          
           {data.skills.map((skill, index) => (
             <div
               key={index}
