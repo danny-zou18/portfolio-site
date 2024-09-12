@@ -10,7 +10,7 @@ import { IconType } from "react-icons/lib";
 import { FaJava, FaPython, FaRust, FaHtml5, FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { BiLogoTypescript } from "react-icons/bi";
-import { SiCplusplus } from "react-icons/si";
+import { SiCplusplus, SiCsharp } from "react-icons/si";
 
 interface skillsProp {
   title: string;
@@ -59,6 +59,11 @@ const programmingLanguages: skillsProp[] = [
     icon: SiCplusplus,
     level: "Beginner",
   },
+  {
+    title: "C#",
+    icon: SiCsharp,
+    level: "Beginner",
+  }
 ];
 
 import { FaReact } from "react-icons/fa";
@@ -140,6 +145,9 @@ const databases: skillsProp[] = [
 import { FaGithub, FaGitlab, FaNodeJs, FaDocker, FaAws } from "react-icons/fa";
 import { DiRedis } from "react-icons/di";
 import { IoLogoFirebase } from "react-icons/io5";
+import { FaUnity } from "react-icons/fa6";
+import { VscVscode } from "react-icons/vsc";
+import { SiVim } from "react-icons/si";
 
 const tools: skillsProp[] = [
   {
@@ -176,6 +184,21 @@ const tools: skillsProp[] = [
     title: "Firebase",
     icon: IoLogoFirebase,
     level: "Beginner",
+  },
+  {
+    title: "Unity",
+    icon: FaUnity,
+    level: "Beginner",
+  },
+  {
+    title: "VSCode",
+    icon: VscVscode,
+    level: "Professional",
+  },
+  {
+    title: "Vim",
+    icon: SiVim,
+    level: "Intermediate",
   },
 ];
 
