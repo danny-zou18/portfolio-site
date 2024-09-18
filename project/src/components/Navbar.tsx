@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
       >
         <div className="flex text-xl gap-2">
           <a
-            href="https://www.linkedin.com/in/danny-zou-bzs1010/"
+            href="https://www.linkedin.com/in/dzou18/"
             target="_blank"
             title="Linkedin"
             className=" p-2 rounded-full border-2 border-card hover:bg-card hover:text-background hover:border-background transition-all duration-300 "
