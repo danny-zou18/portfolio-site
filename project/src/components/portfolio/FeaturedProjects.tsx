@@ -27,28 +27,6 @@ export type featuredProjectType = {
 const featuredProjects: featuredProjectType[] = [
   {
     id: "1",
-    title: "LibreTunes",
-    types: ["Web Application", "Open Source"],
-    startDate: new Date("2024-01-10"),
-    endDate: new Date("9999-12-30"),
-    github: null,
-    gitlab: "Project Repository ^ https://gitlab.mregirouard.com/libretunes",
-    brief_description:
-      "A self-hosted music player that allows you listen to music from your local library. Built for collaborative listening experiences.",
-    description:
-      "LibreTunes is a self-hosted music player designed to make listening a more social experience. LibreTunes includes features like shared playlists, viewing friends` activity and listening along, a shared queue, and more. LibreTunes is the music equivalent of self-hosted movie and TV show platforms like Jellyfin, Plex, Kodi, and others. It is designed for users to run their own server and provide their own audio files for playing. Users can upload new music through the web interface or import an existing library.",
-    how_built:
-      'LibreTunes is built (almost) entirely in Rust using the Leptos web framework. Leptos provides easy ways to write "Server Functions" that make up our API, and serializes/deserilizes data when calling these functions. Our frontend code is compiled to WebAssembly for a highly response UI. Client-side routing also makes our site incredibly fast. We also use Axum webserver and axum-login for login, authentication, and user sessions. User data is stored in PostgreSQL and login session tokens are stored in Redis.',
-    skills: ["Rust", "Leptos", "CSS", "PostgreSQL", "Docker", "Redis"],
-    images: [
-      "/libretunes/libre4.png",
-      "/libretunes/libre3.png",
-      "/libretunes/libre2.png",
-      "/libretunes/libre1.png",
-    ],
-  },
-  {
-    id: "2",
     title: "LifeScape",
     types: ["Mobile Application", "Open Source", "Founder"],
     startDate: new Date("2023-05-01"),
@@ -81,7 +59,53 @@ const featuredProjects: featuredProjectType[] = [
     ],
   },
   {
+    id: "2",
+    title: "RPI Club Management System 3.0",
+    types: ["Web Application"],
+    startDate: new Date("2024-06-01"),
+    endDate: new Date("9999-12-30"),
+    github: null,
+    gitlab: null,
+    brief_description:
+      "Third Iteration of the RPI Club Management System. A web application designed to facilitate club management at RPI.",
+    description:
+      "The RPI Club Management System is a web application designed to facilitate club management at Rensselaer Polytechnic Institute. The system is designed to be a one-stop-shop for club officers to manage their club, including managing members, events, and finances. The system also includes a public-facing website that displays information about clubs and events. The system is built using the Django web framework and is hosted on Heroku.",
+    how_built:
+      'Built with React in the Frontend, Django REST Framework in the backend, and with Postgres as the main database.',
+    skills: ["React", "Django", "PostgreSQL", "Docker", "GitLab"],
+    images: [
+      "/union/union1.png",
+      "/union/union2.png",
+      "/union/union3.png",
+      "/union/union4.png",
+      "/union/union5.png",
+      "/union/union6.png",
+    ],
+  },
+  {
     id: "3",
+    title: "LibreTunes",
+    types: ["Web Application", "Open Source"],
+    startDate: new Date("2024-01-10"),
+    endDate: new Date("9999-12-30"),
+    github: null,
+    gitlab: "Project Repository ^ https://gitlab.mregirouard.com/libretunes",
+    brief_description:
+      "A self-hosted music player that allows you listen to music from your local library. Built for collaborative listening experiences.",
+    description:
+      "LibreTunes is a self-hosted music player designed to make listening a more social experience. LibreTunes includes features like shared playlists, viewing friends` activity and listening along, a shared queue, and more. LibreTunes is the music equivalent of self-hosted movie and TV show platforms like Jellyfin, Plex, Kodi, and others. It is designed for users to run their own server and provide their own audio files for playing. Users can upload new music through the web interface or import an existing library.",
+    how_built:
+      'LibreTunes is built (almost) entirely in Rust using the Leptos web framework. Leptos provides easy ways to write "Server Functions" that make up our API, and serializes/deserilizes data when calling these functions. Our frontend code is compiled to WebAssembly for a highly response UI. Client-side routing also makes our site incredibly fast. We also use Axum webserver and axum-login for login, authentication, and user sessions. User data is stored in PostgreSQL and login session tokens are stored in Redis.',
+    skills: ["Rust", "Leptos", "CSS", "PostgreSQL", "Docker", "Redis"],
+    images: [
+      "/libretunes/libre4.png",
+      "/libretunes/libre3.png",
+      "/libretunes/libre2.png",
+      "/libretunes/libre1.png",
+    ],
+  },
+  {
+    id: "4",
     title: "DevMan - ConUHacks VIII",
     types: ["Hackathon", "Winner 🏆", "SaaS"],
     startDate: new Date("2024-01-20"),
